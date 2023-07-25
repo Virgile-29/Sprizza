@@ -9,5 +9,6 @@ The first iteration will showcase an intern ordering management system.
   - cooking
   - delivered
   - checked out
+  - 
 3- The manager will be able to search through orders history with basic filters.
 
