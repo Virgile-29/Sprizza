@@ -45,7 +45,6 @@ public class WebSecurityConfig {
         return authProvider;
     }
 
-
     // TODO: Match the right url to the right role
     /**
      * This is the filter chain that will be used by the authentication manager
@@ -53,9 +52,9 @@ public class WebSecurityConfig {
      */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http)throws Exception {
-        http.authorizeHttpRequests((authz) -> authz.anyRequest().authenticated())
+        http.authorizeHttpRequests((authorize) -> authorize.anyRequest().authenticated())
                 .formLogin((form) -> form
-                        .loginPage("/login")
+                        .loginPage("/admin/login")
                         .permitAll()
                 )
                 .httpBasic(Customizer.withDefaults());
