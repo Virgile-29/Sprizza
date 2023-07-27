@@ -2,13 +2,18 @@ package fr.eni.sprizza.auth;
 
 import fr.eni.sprizza.dal.UserRepository;
 import fr.eni.sprizza.bo.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
+    @Autowired
     private UserRepository userRepository;
+
 
     /**
      * Locates the user based on the username. In the actual implementation, the search
@@ -28,6 +33,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if(user == null) {
             throw new UsernameNotFoundException("User not found :(");
         }
+        System.out.println(user.getUsername());
         return new MyUserDetails(user);
     }
 }
