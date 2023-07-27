@@ -1,3 +1,4 @@
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <div th:replace="~{/fragments/header :: header}"></div>
 <body>
 <th:block th:replace="~{/fragments/navbarTitle :: navbarTitle}"></th:block>
@@ -5,7 +6,7 @@
     <h1 class="h1">Welcome to 50 shades of pizza manager</h1>
 </div>
 <nav th:replace="~{/fragments/navbarTitle :: navbar}"></nav>
-<section class="container" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<section class="container" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 
     <span sec:authentication="name">Bob</span>
     <span sec:authentication="principal.authorities">[ROLE]</span>
@@ -29,3 +30,4 @@
 
 <footer th:replace="~{/fragments/footer :: footer}"></footer>
 </body>
+</html>
