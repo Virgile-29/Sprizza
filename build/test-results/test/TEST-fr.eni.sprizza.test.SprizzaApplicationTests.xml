@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fr.eni.sprizza.test.SprizzaApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-27T13:30:33" hostname="14SE29-JPV6YW2" time="0.451">
+<testsuite name="fr.eni.sprizza.test.SprizzaApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-27T14:48:20" hostname="14SE29-JPV6YW2" time="0.464">
   <properties/>
-  <testcase name="contextLoads()" classname="fr.eni.sprizza.test.SprizzaApplicationTests" time="0.451"/>
-  <system-out><![CDATA[15:30:29.308 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [fr.eni.sprizza.test.SprizzaApplicationTests]: SprizzaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:30:29.390 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration fr.eni.sprizza.SprizzaApplication for test class fr.eni.sprizza.test.SprizzaApplicationTests
+  <testcase name="contextLoads()" classname="fr.eni.sprizza.test.SprizzaApplicationTests" time="0.464"/>
+  <system-out><![CDATA[16:48:16.662 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [fr.eni.sprizza.test.SprizzaApplicationTests]: SprizzaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:48:16.736 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration fr.eni.sprizza.SprizzaApplication for test class fr.eni.sprizza.test.SprizzaApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,31 +13,33 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.2)
 
-2023-07-27T15:30:29.698+02:00  INFO 7624 --- [    Test worker] f.e.s.test.SprizzaApplicationTests       : Starting SprizzaApplicationTests using Java 17 with PID 7624 (started by vmoulart2022 in D:\java\app\Sprizza)
-2023-07-27T15:30:29.700+02:00  INFO 7624 --- [    Test worker] f.e.s.test.SprizzaApplicationTests       : No active profile set, falling back to 1 default profile: "default"
-2023-07-27T15:30:30.219+02:00  INFO 7624 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-07-27T15:30:30.263+02:00  INFO 7624 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
-2023-07-27T15:30:30.674+02:00  INFO 7624 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-07-27T15:30:30.719+02:00  INFO 7624 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
-2023-07-27T15:30:30.721+02:00  INFO 7624 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-07-27T15:30:30.837+02:00  INFO 7624 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-07-27T15:30:30.955+02:00  INFO 7624 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-07-27T15:30:30.972+02:00  INFO 7624 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-07-27T15:30:31.187+02:00  INFO 7624 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: dbabb204-a88e-4818-968f-f046539e90f9
-2023-07-27T15:30:31.189+02:00  INFO 7624 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-07-27T15:30:31.422+02:00  INFO 7624 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-07-27T15:30:31.983+02:00  INFO 7624 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-07-27T15:30:32.081+02:00  INFO 7624 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-07-27T15:30:32.252+02:00  INFO 7624 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-07-27T15:30:32.538+02:00  WARN 7624 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-07-27T15:30:32.644+02:00  INFO 7624 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1a632663, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1147ab09, org.springframework.security.web.context.SecurityContextHolderFilter@2a4bee4e, org.springframework.security.web.header.HeaderWriterFilter@5a503cf0, org.springframework.security.web.csrf.CsrfFilter@303a484e, org.springframework.security.web.authentication.logout.LogoutFilter@63b334fd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1cc5d8a9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5fc3dfc1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ba19932, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ed17eaf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@503b5337, org.springframework.security.web.access.ExceptionTranslationFilter@78907a46, org.springframework.security.web.access.intercept.AuthorizationFilter@6dae5562]
-2023-07-27T15:30:32.647+02:00  WARN 7624 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-07-27T15:30:32.648+02:00  INFO 7624 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/images/**']
-2023-07-27T15:30:32.648+02:00  WARN 7624 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-07-27T15:30:32.648+02:00  INFO 7624 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/js/**']
-2023-07-27T15:30:32.648+02:00  WARN 7624 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2023-07-27T15:30:32.648+02:00  INFO 7624 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/webjars/**']
-2023-07-27T15:30:33.021+02:00  INFO 7624 --- [    Test worker] f.e.s.test.SprizzaApplicationTests       : Started SprizzaApplicationTests in 3.512 seconds (process running for 4.392)
+2023-07-27T16:48:17.040+02:00  INFO 1004 --- [    Test worker] f.e.s.test.SprizzaApplicationTests       : Starting SprizzaApplicationTests using Java 17 with PID 1004 (started by vmoulart2022 in D:\java\app\Sprizza)
+2023-07-27T16:48:17.041+02:00  INFO 1004 --- [    Test worker] f.e.s.test.SprizzaApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2023-07-27T16:48:17.556+02:00  INFO 1004 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-27T16:48:17.600+02:00  INFO 1004 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2023-07-27T16:48:18.021+02:00  INFO 1004 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-27T16:48:18.065+02:00  INFO 1004 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-07-27T16:48:18.067+02:00  INFO 1004 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-07-27T16:48:18.183+02:00  INFO 1004 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-07-27T16:48:18.298+02:00  INFO 1004 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-27T16:48:18.314+02:00  INFO 1004 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-27T16:48:18.520+02:00  INFO 1004 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 36d8be84-7eb2-4d38-9711-edc6fc7a451e
+2023-07-27T16:48:18.521+02:00  INFO 1004 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-27T16:48:18.751+02:00  INFO 1004 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-07-27T16:48:19.311+02:00  INFO 1004 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-27T16:48:19.407+02:00  INFO 1004 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-27T16:48:19.584+02:00  INFO 1004 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-07-27T16:48:19.869+02:00  WARN 1004 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+DAO AUTH PROVIDER
+Security filter chain
+2023-07-27T16:48:19.967+02:00  INFO 1004 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1ed17eaf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1106a9cc, org.springframework.security.web.context.SecurityContextHolderFilter@560e1459, org.springframework.security.web.header.HeaderWriterFilter@2f726cf4, org.springframework.security.web.csrf.CsrfFilter@6792aa3e, org.springframework.security.web.authentication.logout.LogoutFilter@5add0cc0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4290fcd7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@37351baa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c3125ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a33d655, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ef1080d, org.springframework.security.web.access.ExceptionTranslationFilter@57e83608, org.springframework.security.web.access.intercept.AuthorizationFilter@78907a46]
+2023-07-27T16:48:19.976+02:00  WARN 1004 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/images/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-07-27T16:48:19.977+02:00  INFO 1004 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/images/**']
+2023-07-27T16:48:19.977+02:00  WARN 1004 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/js/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-07-27T16:48:19.977+02:00  INFO 1004 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/js/**']
+2023-07-27T16:48:19.977+02:00  WARN 1004 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/webjars/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-07-27T16:48:19.977+02:00  INFO 1004 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/webjars/**']
+2023-07-27T16:48:20.356+02:00  INFO 1004 --- [    Test worker] f.e.s.test.SprizzaApplicationTests       : Started SprizzaApplicationTests in 3.505 seconds (process running for 4.356)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

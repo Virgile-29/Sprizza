@@ -5,42 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf0986c7-717e-4bad-b886-b04a8f4254ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/eni/sprizza/auth/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/eni/sprizza/auth/UserDetailsServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/eni/sprizza/auth/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/eni/sprizza/auth/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/eni/sprizza/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/eni/sprizza/controller/HomeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/fr/eni/sprizza/test/SprizzaApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/fr/eni/sprizza/test/SprizzaApplicationTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/Sprizza-1-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/Sprizza-1-plain.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/Sprizza-1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/Sprizza-1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/fr.eni.sprizza.test.SprizzaApplicationTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/fr.eni.sprizza.test.SprizzaApplicationTests.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/fr.eni.sprizza.test.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/fr.eni.sprizza.test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/adminHomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/adminHomePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/fragments/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-fr.eni.sprizza.test.SprizzaApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-fr.eni.sprizza.test.SprizzaApplicationTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/WebSecurityConfig.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserDetailsServiceImpl.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/WebSecurityConfig.class.uniqueId1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/SprizzaApplicationTests.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/SprizzaApplicationTests.class.uniqueId0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/eni/sprizza/auth/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/eni/sprizza/auth/UserDetailsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/eni/sprizza/auth/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/eni/sprizza/auth/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/eni/sprizza/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/eni/sprizza/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminHomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminHomePage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbarTitle.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbarTitle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/fr/eni/sprizza/test/SprizzaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/fr/eni/sprizza/test/SprizzaApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,8 +232,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.SprizzaApplication" />
-        <item itemvalue="Gradle.SprizzaApplicationTests" />
         <item itemvalue="Gradle.Sprizza [build]" />
+        <item itemvalue="Gradle.SprizzaApplicationTests" />
         <item itemvalue="Gradle.Sprizza [clean]" />
       </list>
     </recent_temporary>
@@ -259,7 +255,7 @@
       <workItem from="1690397486446" duration="285000" />
       <workItem from="1690443550773" duration="644000" />
       <workItem from="1690444206507" duration="380000" />
-      <workItem from="1690444598485" duration="17138000" />
+      <workItem from="1690444598485" duration="20108000" />
     </task>
     <servers />
   </component>

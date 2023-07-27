@@ -41,17 +41,17 @@ class SprizzaApplicationTests {
 	}
 
 	private void createUsers() {
-		User manager = new User();
-		manager.setRole("manager");
 		BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
-		String pw = pwEncoder.encode("123456");
-		manager.setPassword(pw);
+		User manager = new User();
 		manager.setUsername("Michou");
+		manager.setPassword(pwEncoder.encode("123456"));
+		manager.setRole("manager");
 
 		User pizzaiolo = new User();
 		pizzaiolo.setUsername("Mario");
-		pizzaiolo.setRole("cuisinier");
 		pizzaiolo.setPassword(pwEncoder.encode("azerty"));
+		pizzaiolo.setRole("cuisinier");
+
 
 		userRepository.save(manager);
 		userRepository.save(pizzaiolo);

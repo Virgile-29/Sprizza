@@ -45,6 +45,7 @@ public class WebSecurityConfig {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder());
+        System.out.println("DAO AUTH PROVIDER");
         return authProvider;
     }
 
@@ -61,6 +62,7 @@ public class WebSecurityConfig {
                         .permitAll()
                 )
                 .httpBasic(Customizer.withDefaults());
+        System.out.println("Security filter chain");
         return http.build();
     }
 

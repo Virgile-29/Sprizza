@@ -5,8 +5,10 @@
     <h1 class="h1">Welcome to 50 shades of pizza manager</h1>
 </div>
 <nav th:replace="~{/fragments/navbarTitle :: navbar}"></nav>
-<section class="container">
+<section class="container" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
+    <span sec:authentication="name">Bob</span>
+    <span sec:authentication="principal.authorities">[ROLE]</span>
     <div class="row">
         <div class="col">
             ITEM 1
@@ -23,8 +25,6 @@
             ITEM 4
         </div>
     </div>
-
-
 </section>
 
 <footer th:replace="~{/fragments/footer :: footer}"></footer>
