@@ -3,7 +3,7 @@ package fr.eni.sprizza.bo;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "_users")
+@Table(name = "users")
 public class User {
 
     @Id
