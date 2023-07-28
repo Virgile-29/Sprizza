@@ -22,9 +22,7 @@ public class Product {
 	
 	@Column(unique=true)
 	private String name;
-	
-	private String note;
-	
+
 	private Boolean enable;
 	
 	private String type;
@@ -48,14 +46,6 @@ public class Product {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getNote() {
-		return note;
-	}
-
-	public void setNote(String note) {
-		this.note = note;
 	}
 
 	public Boolean getEnable() {
