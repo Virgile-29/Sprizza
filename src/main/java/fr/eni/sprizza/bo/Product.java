@@ -28,6 +28,8 @@ public class Product {
 	
 	private String type;
 	
+	private float price;
+	
 	@ManyToMany
 	private List<Ingredient> ingredients;
 
@@ -77,5 +79,13 @@ public class Product {
 
 	public void setIngredients(List<Ingredient> ingredients) {
 		this.ingredients = ingredients;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
 	}
 }

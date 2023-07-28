@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import fr.eni.sprizza.bo.Order123;
+import fr.eni.sprizza.bo.Order;
 import fr.eni.sprizza.dal.OrderRepository;
 
 @SpringBootTest
@@ -22,7 +22,7 @@ class SprizzaApplicationTests {
 
 		System.out.println("test");
 		
-		Order123 order = new Order123();
+		Order order = new Order();
 		order.setClientName("joe");
 		
 		orderRepository.save(order);
