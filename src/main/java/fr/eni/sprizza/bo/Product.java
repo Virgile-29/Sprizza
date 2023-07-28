@@ -20,6 +20,7 @@ public class Product {
     @Column(name = "id",unique=true, nullable = false)
 	private int id;
 	
+	@Column(unique=true)
 	private String name;
 	
 	private String note;
