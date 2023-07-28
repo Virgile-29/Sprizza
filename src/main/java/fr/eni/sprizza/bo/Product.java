@@ -20,6 +20,7 @@ public class Product {
     @Column(name = "id",unique=true, nullable = false)
 	private int id;
 	
+	@Column(unique=true)
 	private String name;
 	
 	private String note;
@@ -27,6 +28,8 @@ public class Product {
 	private Boolean enable;
 	
 	private String type;
+	
+	private float price;
 	
 	@ManyToMany
 	private List<Ingredient> ingredients;
@@ -77,5 +80,13 @@ public class Product {
 
 	public void setIngredients(List<Ingredient> ingredients) {
 		this.ingredients = ingredients;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
 	}
 }

@@ -6,17 +6,19 @@ import java.util.List;
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 
 @Entity
-public class Order123 {
+@Table(name = "_Order")
+public class Order {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id",unique=true, nullable = false)
 	private long id;
@@ -27,13 +29,11 @@ public class Order123 {
 	
 	private String status;
 	
-	private float price;
-	
 	private Boolean paid;
 	
 	private int tableNumber;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "order")
 	private List<OrderLine> lines;
 
 	public long getId() {
@@ -66,14 +66,6 @@ public class Order123 {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public float getPrice() {
-		return price;
-	}
-
-	public void setPrice(float price) {
-		this.price = price;
 	}
 
 	public Boolean getPaid() {
