@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h2>Commandes du jour : </h2>
+	<ul>
+		<li th:each="order : ${orders}">
+			<span th:text="${order.clientName}"></span> - <span th:text="${order.status}"></span> - <span th:text="${order.paid}"></span> - <span th:text="${order.tableNumber}"></span> - <span th:text="${order.timeSlot}"></span>
+		</li>
+	</ul>
 </body>
+
 </html>
