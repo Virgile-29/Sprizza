@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Controller
 public class NewOrderController {
@@ -21,7 +23,9 @@ public class NewOrderController {
     @GetMapping("/admin/new-order")
     public String newOrder(Model model) {
         List<Product> products = productService.findAll();
-        model.addAttribute("products", products);
+        Map<String, List<Product>> productsByType =
+                products.stream().collect(Collectors.groupingBy(Product::getType));
+        model.addAttribute("productsByType", productsByType);
         return "newOrder";
     }
 }
