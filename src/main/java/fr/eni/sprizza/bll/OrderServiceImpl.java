@@ -22,7 +22,7 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public void saveUser(Order order) {
+	public void save(Order order) {
 		this.orderRepository.save(order);
 		
 	}

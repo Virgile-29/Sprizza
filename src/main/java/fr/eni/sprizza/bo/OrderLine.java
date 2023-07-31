@@ -1,10 +1,7 @@
 package fr.eni.sprizza.bo;
 
-import java.io.Serializable;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
@@ -12,12 +9,11 @@ import jakarta.persistence.ManyToOne;
 
 
 @Entity
-@IdClass(fr.eni.sprizza.bo.OrderLine.OrderLineId.class)
+@IdClass(OrderLineId.class)
 public class OrderLine {
 	
 	@Id
-	@GeneratedValue
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER, optional = false)
 	@JoinColumn(name = "order_id")
 	private Order order;
 	
@@ -31,11 +27,11 @@ public class OrderLine {
 	@ManyToOne
 	private Product product;
 
-	public Long getId() {
+	public Long getLineNumber() {
 		return lineNumber;
 	}
 
-	public void setId(Long id) {
+	public void setLineNumber(Long id) {
 		this.lineNumber = id;
 	}
 
@@ -60,6 +56,8 @@ public class OrderLine {
 	}
 
 	public void setOrder(Order order) {
+		if (this.order != null) this.order.getLines().remove(this);
+		order.addOrderLine(this);
 		this.order = order;
 	}
 
@@ -71,31 +69,4 @@ public class OrderLine {
 		this.note = note;
 	}
 	
-	static class OrderLineId implements Serializable {
-		private Long lineNumber;
-	    private Order order;
-	    
-		public OrderLineId(Long lineNumber, Order order) {
-			super();
-			this.lineNumber = lineNumber;
-			this.order = order;
-		}
-
-		public Long getId() {
-			return lineNumber;
-		}
-
-		public void setId(Long lineNumber) {
-			this.lineNumber = lineNumber;
-		}
-
-		public Order getIdOrder() {
-			return order;
-		}
-
-		public void setIdOrder(Order order) {
-			this.order = order;
-		}
-		
-	}
 }

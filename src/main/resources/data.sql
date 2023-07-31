@@ -612,12 +612,12 @@ insert into order_line (order_id, line_number, product_id, ammount, note) values
 	null
 	);
 insert into order_line (order_id, line_number, product_id, ammount, note) values (
-	8,2,
+	8,1,
 	(select id from product where name like 'Pizza Escargot Gorgonzola'),4,
 	null
 	);
 insert into order_line (order_id, line_number, product_id, ammount, note) values (
-	8,3,
+	8,2,
 	(select id from product where name like 'Berry Bliss Punch'),2,
 	null
 	);
@@ -761,3 +761,6 @@ insert into order_line (order_id, line_number, product_id, ammount, note) values
 	(select id from product where name like 'Polenta Funghi'),1,
 	null
 	);
+
+select * from _order inner join order_line on _order.id = order_line.order_id order by _order.id
+select * from product

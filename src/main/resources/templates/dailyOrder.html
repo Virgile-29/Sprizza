@@ -1,18 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	
 </head>
-
-<body>
-	<h2>Commandes du jour : </h2>
-	<ul>
-		<li th:each="order : ${orders}">
-			<span th:text="${order.clientName}"></span> - <span th:text="${order.status}"></span> - <span th:text="${order.paid}"></span> - <span th:text="${order.tableNumber}"></span> - <span th:text="${order.timeSlot}"></span>
-		</li>
-	</ul>
-</body>
-
+	<body>
+		<h2>Commandes du jour : </h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nom Client</th>
+					<th scope="col">Heure de la commande</th>
+					<th>
+						<span sec:authorize="hasRole('ROLE_ADMIN')">
+							<span scope="col">Table/À emporter</span>
+						</span>	
+					</th>
+					<th scope="col">Statut</th>
+					<th>
+						<span sec:authorize="hasRole('ROLE_ADMIN')">
+							<span scope="col">Payé</span>
+						</span>	
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th:block th:each="order, iterStat : ${orders}">
+					<tr>
+						<td th:text="${iterStat.index}" scope="row"></td>
+						<td th:text="${order.clientName}"></td>
+						<th th:text="${order.timeSlot}"></td>
+						<td>
+							<span sec:authorize="hasRole('ROLE_ADMIN')">
+								<span th:if="${order.tableNumber != -1}" th:text="'table ' + ${order.tableNumber}"></span>
+								<span th:if="${order.tableNumber == -1}">Commande en ligne</span>
+							</span>	
+						</td>
+						<td th:if="${order.status == 'ready'}">Commande prête</td>
+						<td th:if="${order.status == 'waiting'}">Commande en attente</td>
+						<td>
+							<span sec:authorize="hasRole('ROLE_ADMIN')">
+								<span th:if="${order.paid == true}">Payé</span>
+								<span th:if="${order.paid == false}">Non Payé</td>
+							</span>	
+						</td>
+					</tr>
+					</tr>
+						<td></td>
+						<td colspan="3">
+							<table>
+								<tbody>
+									<tr th:each="line : ${order.lines}">
+										<td th:text="${line.lineNumber}"></td>
+										<td th:text="${line.ammount} + ' * ' + ${line.product.name}"></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td>
+							<i class="bi bi-square h1"></i>
+						</td>
+						<td>
+							<span sec:authorize="hasRole('ROLE_ADMIN')">
+								<i class="bi bi-check-square h1"></i>
+							</span>	
+						</td>
+					</tr>
+				</th:block>
+			</tbody>
+		</table>
+	</body>
 </html>
