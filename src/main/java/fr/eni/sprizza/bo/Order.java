@@ -91,4 +91,10 @@ public class Order {
 	public void setLines(List<OrderLine> lines) {
 		this.lines = lines;
 	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", clientName=" + clientName + ", timeSlot=" + timeSlot + ", status=" + status
+				+ ", paid=" + paid + ", tableNumber=" + tableNumber + ", lines=" + lines + "]";
+	}
 }

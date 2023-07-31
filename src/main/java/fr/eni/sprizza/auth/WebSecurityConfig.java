@@ -54,8 +54,10 @@ public class WebSecurityConfig {
                         .permitAll()
                         .defaultSuccessUrl("/admin", true)
                 )
+                // TODO: CSRF protection
+                // CSRF Disabled for development purposes
+                .csrf().disable()
                 .httpBasic(Customizer.withDefaults());
-        System.out.println("Security filter chain");
         return http.build();
     }
 

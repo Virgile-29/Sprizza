@@ -1,5 +1,6 @@
 package fr.eni.sprizza.controller;
 
+import fr.eni.sprizza.bo.Order;
 import org.springframework.ui.Model;
 import fr.eni.sprizza.bll.ProductService;
 import fr.eni.sprizza.bo.Product;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 import javax.xml.crypto.Data;
@@ -21,6 +23,7 @@ public class NewOrderController {
 
     public NewOrderController(ProductService productService) {
         this.productService = productService;
+
     }
 
     @GetMapping("/admin/new-order")
@@ -34,8 +37,8 @@ public class NewOrderController {
 
     @PostMapping("/admin/new-order-post")
     @CrossOrigin
-    public String newOrderPost() {
-        System.out.println("POST CONTROLLER");
-        return "redirect:/adminHomePage";
+    public String newOrderPost(@RequestBody Order order) {
+        System.out.println(order);
+        return "redirect:/admin";
     }
 }

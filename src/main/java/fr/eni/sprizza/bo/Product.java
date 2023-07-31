@@ -31,6 +31,13 @@ public class Product {
 	
 	@ManyToMany
 	private List<Ingredient> ingredients;
+	public Product() {
+		super();
+	}
+	public Product(Integer id) {
+		super();
+		this.id = id;
+	}
 
 	public int getId() {
 		return id;
@@ -78,5 +85,9 @@ public class Product {
 
 	public void setPrice(float price) {
 		this.price = price;
+	}
+
+	public String toString() {
+		return this.name + " " + this.price + "€" + " " + this.type + " " + this.ingredients + " " + this.enable + " " + this.id;
 	}
 }

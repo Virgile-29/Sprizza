@@ -98,4 +98,8 @@ public class OrderLine {
 		}
 		
 	}
+
+	public String toString() {
+		return "OrderLine [id=" + lineNumber + ", ammount=" + ammount + ", note=" + note + ", product=" + product + "]";
+	}
 }
