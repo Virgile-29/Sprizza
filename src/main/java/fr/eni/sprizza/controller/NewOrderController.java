@@ -1,5 +1,6 @@
 package fr.eni.sprizza.controller;
 
+import fr.eni.sprizza.bll.OrderService;
 import fr.eni.sprizza.bo.Order;
 import org.springframework.ui.Model;
 import fr.eni.sprizza.bll.ProductService;
@@ -20,10 +21,11 @@ import java.util.stream.Collectors;
 public class NewOrderController {
 
     private final ProductService productService;
+    private final OrderService orderService;
 
-    public NewOrderController(ProductService productService) {
+    public NewOrderController(ProductService productService, OrderService orderService) {
         this.productService = productService;
-
+        this.orderService = orderService;
     }
 
     @GetMapping("/admin/new-order")
@@ -39,6 +41,7 @@ public class NewOrderController {
     @CrossOrigin
     public String newOrderPost(@RequestBody Order order) {
         System.out.println(order);
+        orderService.saveOrder(order);
         return "redirect:/admin";
     }
 }

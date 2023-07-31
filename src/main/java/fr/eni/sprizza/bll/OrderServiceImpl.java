@@ -1,5 +1,6 @@
 package fr.eni.sprizza.bll;
 
+import fr.eni.sprizza.bo.Order;
 import fr.eni.sprizza.dal.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,8 @@ public class OrderServiceImpl implements OrderService {
 
 
     @Override
-    public void saveOrder() {
-
+    public void saveOrder(Order order) {
+        this.orderRepository.save(order);
     }
 
     @Override

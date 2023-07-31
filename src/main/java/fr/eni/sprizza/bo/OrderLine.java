@@ -24,7 +24,7 @@ public class OrderLine {
 	@Id
 	private Long lineNumber;
 	
-	private int ammount;
+	private int quantity;
 	
 	private String note;
 	
@@ -39,12 +39,12 @@ public class OrderLine {
 		this.lineNumber = id;
 	}
 
-	public int getAmmount() {
-		return ammount;
+	public int getQuantity() {
+		return quantity;
 	}
 
-	public void setAmmount(int ammount) {
-		this.ammount = ammount;
+	public void getQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public Product getProduct() {
@@ -100,6 +100,6 @@ public class OrderLine {
 	}
 
 	public String toString() {
-		return "OrderLine [id=" + lineNumber + ", ammount=" + ammount + ", note=" + note + ", product=" + product + "]";
+		return "OrderLine [id=" + lineNumber + ", quantity=" + quantity + ", note=" + note + ", product=" + product + "]";
 	}
 }
