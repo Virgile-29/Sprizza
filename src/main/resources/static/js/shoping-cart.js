@@ -80,7 +80,7 @@ function submitCart(order) {
         },
         body: order
     })
-        .then((res) =>  console.log(res))
+        .then((res) => window.location.href ="http://localhost:8080/admin")
         .catch(() => console.log("post fail"))
 }
 function displayShoppingCart() {

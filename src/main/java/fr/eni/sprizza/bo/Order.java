@@ -27,6 +27,12 @@ public class Order {
 
 	private int tableNumber;
 
+	public Order() {
+		this.status = "waiting";
+		this.paid = false;
+		this.timeSlot = LocalDateTime.now();
+	}
+
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<OrderLine> lines;
 

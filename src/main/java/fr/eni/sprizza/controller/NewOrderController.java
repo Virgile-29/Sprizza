@@ -40,10 +40,7 @@ public class NewOrderController {
     @PostMapping("/admin/new-order-post")
     @CrossOrigin
     public String newOrderPost(@RequestBody Order order) {
-        System.out.println(order);
         orderService.save(order);
-        System.out.println("************************");
-        System.out.println(order);
         return "redirect:/admin";
     }
 }
