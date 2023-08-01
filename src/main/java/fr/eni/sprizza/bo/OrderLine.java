@@ -2,41 +2,35 @@ package fr.eni.sprizza.bo;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-
+import jakarta.persistence.*;
 
 @Entity
-@IdClass(fr.eni.sprizza.bo.OrderLine.OrderLineId.class)
 public class OrderLine {
-	
-	@Id
-	@GeneratedValue
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name = "order_id")
+
+	@EmbeddedId
+	private OrderLineId id;
+
+	@MapsId("orderId")
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Order order;
-	
-	@Id
-	private Long lineNumber;
-	
+
 	private Integer quantity;
-	
+
 	private String note;
-	
+
 	@ManyToOne
 	private Product product;
 
+	public OrderLine() {
+		this.id = new OrderLineId();
+	}
+
 	public Long getLineNumber() {
-		return lineNumber;
+		return this.id.getLineNumber();
 	}
 
 	public void setLineNumber(Long lineNumber) {
-		this.lineNumber = lineNumber;
+		this.id.setLineNumber(lineNumber);
 	}
 
 	public int getQuantity() {
@@ -56,7 +50,7 @@ public class OrderLine {
 	}
 
 	public Order getOrder() {
-		return order;
+		return this.order;
 	}
 
 //	public void setOrder(Order order) {
@@ -76,32 +70,19 @@ public class OrderLine {
 	public void setNote(String note) {
 		this.note = note;
 	}
-	
-	static class OrderLineId implements Serializable {
-		private Long lineNumber;
-	    private Order order;
-	    
-		public OrderLineId(Long lineNumber, Order order) {
-			super();
-			this.lineNumber = lineNumber;
-			this.order = order;
-		}
 
-		public Long getId() {
-			return lineNumber;
-		}
-
-		public void setId(Long lineNumber) {
-			this.lineNumber = lineNumber;
-		}
-
-		public Order getIdOrder() {
-			return order;
-		}
-
-		public void setIdOrder(Order order) {
-			this.order = order;
-		}
-		
+	public OrderLineId getId() {
+		return id;
 	}
+
+	public void setId(OrderLineId id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "OrderLine{ lineNumber=" + getLineNumber() + ", quantity=" + quantity
+				+ ", note='" + note + '\'' + ", product=" + product + '}';
+	}
+
 }

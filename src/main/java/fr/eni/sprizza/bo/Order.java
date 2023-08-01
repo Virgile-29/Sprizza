@@ -7,16 +7,15 @@ import java.util.List;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "_order")
 public class Order {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id",unique=true, nullable = false)
+	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
-	
+
 	private String clientName;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -25,10 +24,10 @@ public class Order {
 	private String status;
 
 	private Boolean paid;
-	
+
 	private int tableNumber;
-	
-	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL , fetch = FetchType.LAZY)
+
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<OrderLine> lines;
 
 	public long getId() {
@@ -83,18 +82,18 @@ public class Order {
 		return lines;
 	}
 
-//	public void setLines(List<OrderLine> lines) {
-//		lines.forEach((item) -> item.setOrder(this));
-//		this.lines = lines;
-//	}
+	public void setLines(List<OrderLine> lines) {
+		lines.forEach((item) -> item.setOrder(this));
+		this.lines = lines;
+	}
 
-//	public void addOrderLine(OrderLine line) {
-//		if (lines == null) {
-//			lines = new ArrayList<>();
-//		}
-//		lines.add(line);
-//		line.setOrder(this);
-//	}
+	public void addOrderLine(OrderLine line) {
+		if (lines == null) {
+			lines = new ArrayList<>();
+		}
+		lines.add(line);
+		line.setOrder(this);
+	}
 
 	@Override
 	public String toString() {
