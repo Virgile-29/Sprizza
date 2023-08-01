@@ -16,10 +16,11 @@ import jakarta.persistence.ManyToOne;
 public class OrderLine {
 	
 	@Id
+	@GeneratedValue
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "order_id")
 	private Order order;
-
+	
 	@Id
 	private Long lineNumber;
 	
@@ -86,10 +87,6 @@ public class OrderLine {
 			this.order = order;
 		}
 
-		public OrderLineId() {
-
-		}
-
 		public Long getId() {
 			return lineNumber;
 		}
@@ -106,9 +103,5 @@ public class OrderLine {
 			this.order = order;
 		}
 		
-	}
-
-	public String toString() {
-		return "OrderLine [id=" + lineNumber + ", quantity=" + quantity + ", note=" + note + ", product=" + product + "]";
 	}
 }

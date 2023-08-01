@@ -41,7 +41,7 @@ public class NewOrderController {
     @CrossOrigin
     public String newOrderPost(@RequestBody Order order) {
         System.out.println(order);
-        orderService.saveOrder(order);
+        orderService.save(order);
         System.out.println("************************");
         System.out.println(order);
         return "redirect:/admin";

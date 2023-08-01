@@ -1,9 +1,10 @@
 package fr.eni.sprizza.bll;
-
+import java.util.List;
 import fr.eni.sprizza.bo.Order;
 
-public interface OrderService {
-    public void saveOrder(Order order);
-    public void saveOrderLine();
-    public void saveOrderLineList();
+public interface OrderService {	
+	public List<Order> findAll();
+
+	public void save(Order order);
+
 }
