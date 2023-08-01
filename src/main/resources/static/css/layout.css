@@ -1,0 +1,27 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu-item {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+}
+
+.menu-ingredient {
+    font-style: italic;
+    color: #ada7a7;
+}
+
+
+

@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 import javax.xml.crypto.Data;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Controller
@@ -33,7 +32,8 @@ public class NewOrderController {
         List<Product> products = productService.findAll();
         Map<String, List<Product>> productsByType =
                 products.stream().collect(Collectors.groupingBy(Product::getType));
-        model.addAttribute("productsByType", productsByType);
+        Map<String, List<Product>> sortedProductsByType = sortProductByType(productsByType);
+        model.addAttribute("productsByType", sortedProductsByType);
         return "newOrder";
     }
 
@@ -42,5 +42,21 @@ public class NewOrderController {
     public String newOrderPost(@RequestBody Order order) {
         orderService.save(order);
         return "redirect:/admin";
+    }
+
+    private Map<String, List<Product>> sortProductByType(Map<String, List<Product>> products) {
+        // Define custom order for printing
+        List<String> customOrder = List.of("entree", "principal", "pizza", "desserts", "boisson");
+
+        // Sort the keys based on the custom order
+        List<String> sortedKeys = new ArrayList<>(products.keySet());
+        sortedKeys.sort(Comparator.comparingInt(customOrder::indexOf));
+
+        // Sort the map
+        Map<String, List<Product>> sortedMap = new LinkedHashMap<>();
+        for (String key : sortedKeys) {
+            sortedMap.put(key, products.get(key));
+        }
+        return sortedMap;
     }
 }

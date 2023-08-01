@@ -5,7 +5,6 @@ class Line {
     lineNumber
 }
 
-
 const ShoppingCart = {
     // Product[0] = id , Product[1] = name
     products: [],
@@ -35,7 +34,7 @@ const ShoppingCart = {
         localStorage.setItem("order", JSON.stringify(lines))
         return lines
     },
-    linesName: function () {
+    lines: function () {
         const lines = []
         for(let i = 0; i < ShoppingCart.products.length ; i++) {
             // If the product is already in the order
@@ -44,12 +43,17 @@ const ShoppingCart = {
                 line.quantity ++
             } else {
                 const line = new Line()
+                line.product = ShoppingCart.products[i][0]
                 line.name = ShoppingCart.products[i][1]
                 line.quantity ++
                 lines.push(line)
             }
         }
         return lines
+    },
+
+    linesSortedByQuantity: function () {
+        return ShoppingCart.lines().sort((a, b) => b.quantity - a.quantity)
     }
 
 
@@ -84,17 +88,18 @@ function submitCart(order) {
         .catch(() => console.log("post fail"))
 }
 function displayShoppingCart() {
-    const lines = ShoppingCart.linesName()
+    resetShoppingTable()
+    const lines = ShoppingCart.linesSortedByQuantity()
     const table = document.getElementById("shoppingCartTable")
-    while (table.lastChild) {
-        table.removeChild(table.lastChild);
-    }
     for(let i = 0; i < lines.length; i++) {
         const button = document.createElement("button")
         button.setAttribute("class", "btn btn-danger")
         button.innerHTML = "-"
         button.onclick = function() {
-            removeProduct(this, i)
+            console.log(lines[i].product)
+            ShoppingCart.removeProduct(lines[i].product)
+            resetShoppingTable()
+            displayShoppingCart()
         }
         const row = table.insertRow(i)
         const cell1 = row.insertCell(0)
@@ -104,9 +109,8 @@ function displayShoppingCart() {
         cell2.innerHTML = lines[i].quantity
         cell3.appendChild(button)
     }
+    function resetShoppingTable() {
+        document.getElementById("shoppingCartTable").innerHTML = ""
+    }
 }
 
-function removeProduct(line, i) {
-    ShoppingCart.removeProduct(i)
-    displayShoppingCart()
-}

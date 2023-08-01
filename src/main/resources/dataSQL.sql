@@ -509,252 +509,252 @@ insert into _order (id, client_name, time_slot, table_number, paid, status) valu
 
 --SET IDENTITY_INSERT _order OFF;
 
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	1,1,
 	(select id from product where name like 'Pizza Ratatouille Napoli'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	1,2,
 	(select id from product where name like 'Pizza Ch�vre Pesto'),2,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	1,3,
 	(select id from product where name like 'Redbull'),1,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	1,4,
 	(select id from product where name like 'Diabolo'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	2,1,
 	(select id from product where name like 'Velvet Moonshine'),1,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	2,2,
 	(select id from product where name like 'Poulet Milanese'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	3,1,
 	(select id from product where name like 'Profiteroles al Cioccolato'),2,
 	'al dente avec une sauce tomate maison et un suppl�ment de parmesan r�p�.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	3,2,
 	(select id from product where name like 'Prosciutto Dolce'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	4,1,
 	(select id from product where name like 'Tiramisu aux Fraises'),4,
 	'gratin�e avec suppl�ment de fromage fondu sur le dessus.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	4,2,
 	(select id from product where name like 'Cannoli � la Framboise'),3,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	4,3,
 	(select id from product where name like 'Risotto aux Champignons'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	4,4,
 	(select id from product where name like 'Cr�me Br�l�e al Limone'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	5,1,
 	(select id from product where name like 'Arancini Siciliani'),2,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	5,2,
 	(select id from product where name like 'Gnocchi al Ragu'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	5,3,
 	(select id from product where name like 'Fizzy Mango Breeze'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	6,1,
 	(select id from product where name like 'Fruits de Mer Florentins'),4,
 	'bien cuits, avec suppl�ment de basilic frais.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	6,2,
 	(select id from product where name like 'Carpaccio di Pesce'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	6,3,
 	(select id from product where name like 'Panna Cotta aux Fruits Rouges'),3,
 	'calzone avec suppl�ment de pepperoni, bien cuite et croustillante.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	6,4,
 	(select id from product where name like 'Calzone aux Fruits'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	7,1,
 	(select id from product where name like 'Antipasto Assortito'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	8,2,
 	(select id from product where name like 'Pizza Escargot Gorgonzola'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	8,3,
 	(select id from product where name like 'Berry Bliss Punch'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	9,1,
 	(select id from product where name like 'Bruschetta Rustica'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	9,2,
 	(select id from product where name like 'Insalata Mista'),1,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	9,3,
 	(select id from product where name like 'Limonade'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,1,
 	(select id from product where name like 'Mozzarella Fresca'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,2,
 	(select id from product where name like 'Calzone Aperto Mare'),2,
 	'sauce pesto, avec suppl�ment de pignons de pin.'
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,3,
 	(select id from product where name like 'Pizza Quatre Fromages Amore'),4,
 	'carbonara, avec suppl�ment de pancetta croustillante.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,4,
 	(select id from product where name like 'Pizza Artichaut Bresaola'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,5,
 	(select id from product where name like 'Pizza Carbonara Etna'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,6,
 	(select id from product where name like 'Jus'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	11,1,
 	(select id from product where name like 'Tarte Tiramisu'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	11,2,
 	(select id from product where name like 'Fritto Mare'),4,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	11,3,
 	(select id from product where name like 'Macarons alla Nutella'),1,
 	'avec suppl�ment de truffe.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	12,1,
 	(select id from product where name like 'Escalopes Bolognaises'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	12,2,
 	(select id from product where name like 'Poulet Proven�al'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	13,1,
 	(select id from product where name like 'Pizza Dolce Nutella'),2,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	13,2,
 	(select id from product where name like 'Tartelette au Pistache'),4,
 	'v�g�tarienne avec suppl�ment de champignons, poivrons et olives noires.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	13,3,
 	(select id from product where name like 'Pizza Poulet Prosciutto'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	14,1,
 	(select id from product where name like 'Veau Marsala'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	15,1,
 	(select id from product where name like 'Coca'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	15,2,
 	(select id from product where name like 'Ravioli � l''Estragon'),4,
 	'margherita avec suppl�ment de mozzarella di bufala et tomates cerises.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	16,1,
 	(select id from product where name like 'Pizza Margherita Romantica'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	16,2,
 	(select id from product where name like 'Pizza Saumon Fum� Bianca'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	16,3,
 	(select id from product where name like 'Midnight Serenade'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	17,1,
 	(select id from product where name like 'Gelato � la Lavande'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	17,2,
 	(select id from product where name like 'Lasagne Gratin�es'),1,
 	'suppl�ment d''anchois sur une moiti�.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	18,1,
 	(select id from product where name like 'Citrus ZingaRita'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	19,1,
 	(select id from product where name like 'Escargots Romano'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	20,1,
 	(select id from product where name like 'Polenta Funghi'),1,
 	null
