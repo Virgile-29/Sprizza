@@ -15,7 +15,7 @@ insert into ingredient values ('Poivron rouge');
 insert into ingredient values ('Avocat');
 insert into ingredient values ('Champignon');
 insert into ingredient values ('Banane');
-insert into ingredient values ('Épinard');
+insert into ingredient values ('ï¿½pinard');
 insert into ingredient values ('Poulet');
 insert into ingredient values ('Riz basmati');
 insert into ingredient values ('Tomate cerise');
@@ -32,9 +32,9 @@ insert into ingredient values ('Persil');
 insert into ingredient values ('Lentilles');
 insert into ingredient values ('Thon');
 insert into ingredient values ('Aubergine');
-insert into ingredient values ('Noix de coco râpée');
+insert into ingredient values ('Noix de coco rï¿½pï¿½e');
 insert into ingredient values ('Mangue');
-insert into ingredient values ('Fromage de chèvre');
+insert into ingredient values ('Fromage de chï¿½vre');
 insert into ingredient values ('Poivre blanc');
 insert into ingredient values ('Jambon');
 insert into ingredient values ('Melon');
@@ -53,10 +53,10 @@ insert into ingredient values ('Ciboulette');
 insert into ingredient values ('Sel de mer');
 insert into ingredient values ('Noix de cajou');
 insert into ingredient values ('Parmesan');
-insert into ingredient values ('Cacahuètes');
+insert into ingredient values ('Cacahuï¿½tes');
 insert into ingredient values ('Cannelle');
 insert into ingredient values ('Cacao en poudre');
-insert into ingredient values ('Mangue séchée');
+insert into ingredient values ('Mangue sï¿½chï¿½e');
 insert into ingredient values ('Ail');
 insert into ingredient values ('Yaourt grec');
 insert into ingredient values ('Cardamome');
@@ -70,12 +70,12 @@ insert into ingredient values ('Pruneaux');
 insert into ingredient values ('Wasabi');
 insert into ingredient values ('Pamplemousse');
 insert into ingredient values ('Fenouil');
-insert into ingredient values ('Sésame');
+insert into ingredient values ('Sï¿½same');
 insert into ingredient values ('Feuilles de menthe');
-insert into ingredient values ('Viande hachée');
+insert into ingredient values ('Viande hachï¿½e');
 insert into ingredient values ('Poivre vert');
 insert into ingredient values ('Saucisse');
-insert into ingredient values ('Gruyère');
+insert into ingredient values ('Gruyï¿½re');
 insert into ingredient values ('Aneth');
 insert into ingredient values ('Figues');
 insert into ingredient values ('Pistaches');
@@ -83,29 +83,29 @@ insert into ingredient values ('Persil plat');
 insert into ingredient values ('Chou-fleur');
 insert into ingredient values ('Grenade');
 insert into ingredient values ('Cresson');
-insert into ingredient values ('Mûres');
-insert into ingredient values ('Viande de bœuf');
+insert into ingredient values ('Mï¿½res');
+insert into ingredient values ('Viande de bï¿½uf');
 insert into ingredient values ('Poivre rose');
 insert into ingredient values ('Roquefort');
 insert into ingredient values ('Potiron');
 insert into ingredient values ('Pois chiches');
-insert into ingredient values ('Basilic sacré');
+insert into ingredient values ('Basilic sacrï¿½');
 insert into ingredient values ('Myrtilles');
 insert into ingredient values ('Tofu');
 insert into ingredient values ('Estragon');
 insert into ingredient values ('Fromage suisse');
 insert into ingredient values ('Mandarine');
-insert into ingredient values ('Édam');
-insert into ingredient values ('Pêches');
+insert into ingredient values ('ï¿½dam');
+insert into ingredient values ('Pï¿½ches');
 insert into ingredient values ('Chou rouge');
 insert into ingredient values ('Airelles');
 insert into ingredient values ('Chou de Bruxelles');
 insert into ingredient values ('Ricotta');
 insert into ingredient values ('Betterave');
-insert into ingredient values ('Mûres blanches');
+insert into ingredient values ('Mï¿½res blanches');
 insert into ingredient values ('Asperges');
-insert into ingredient values ('Yaourt à la vanille');
-insert into ingredient values ('Piments jalapeños');
+insert into ingredient values ('Yaourt ï¿½ la vanille');
+insert into ingredient values ('Piments jalapeï¿½os');
 insert into ingredient values ('Huile d''olive');
 
 
@@ -124,7 +124,7 @@ insert into product (name,type, price, enable) values ('Diabolo',	'boisson',0,'t
 insert into product (name,type, price, enable) values ('Redbull',	'boisson',0,'true');
 insert into product (name,type, price, enable) values ('Jus',		'boisson',0,'true');
 
---Insertion de 10 plats de type entrées
+--Insertion de 10 plats de type entrï¿½es
 insert into product (name,type, price, enable) values ('Bruschetta Rustica',	'entree',0,'true');	
 insert into product (name,type, price, enable) values ('Mozzarella Fresca',		'entree',0,'true');
 insert into product (name,type, price, enable) values ('Antipasto Assortito',	'entree',0,'true');	
@@ -140,8 +140,8 @@ insert into product (name,type, price, enable) values ('Fritto Mare',			'entree'
 insert into product (name,type, price, enable) values ('Pizza Margherita Romantica',	'pizza',0,'true');
 insert into product (name,type, price, enable) values ('Pizza Quatre Fromages Amore',	'pizza',0,'true');
 insert into product (name,type, price, enable) values ('Pizza Poulet Prosciutto',		'pizza',0,'true');
-insert into product (name,type, price, enable) values ('Pizza Saumon Fumé Bianca',		'pizza',0,'true');
-insert into product (name,type, price, enable) values ('Pizza Chèvre Pesto',			'pizza',0,'true');
+insert into product (name,type, price, enable) values ('Pizza Saumon Fumï¿½ Bianca',		'pizza',0,'true');
+insert into product (name,type, price, enable) values ('Pizza Chï¿½vre Pesto',			'pizza',0,'true');
 insert into product (name,type, price, enable) values ('Pizza Escargot Gorgonzola',		'pizza',0,'true');
 insert into product (name,type, price, enable) values ('Pizza Carbonara Etna',			'pizza',0,'true');
 insert into product (name,type, price, enable) values ('Pizza Artichaut Bresaola',		'pizza',0,'true');
@@ -150,26 +150,26 @@ insert into product (name,type, price, enable) values ('Calzone Aperto Mare',			
 
 --Insertion de 10 plats principal
 insert into product (name,type, price, enable) values ('Escalopes Bolognaises',		'principal',0,'true');
-insert into product (name,type, price, enable) values ('Poulet Provençal',			'principal',0,'true');
-insert into product (name,type, price, enable) values ('Lasagne Gratinées',			'principal',0,'true');
+insert into product (name,type, price, enable) values ('Poulet Provenï¿½al',			'principal',0,'true');
+insert into product (name,type, price, enable) values ('Lasagne Gratinï¿½es',			'principal',0,'true');
 insert into product (name,type, price, enable) values ('Fruits de Mer Florentins',	'principal',0,'true');
 insert into product (name,type, price, enable) values ('Risotto aux Champignons',	'principal',0,'true');
 insert into product (name,type, price, enable) values ('Poulet Milanese',			'principal',0,'true');
-insert into product (name,type, price, enable) values ('Ravioli à l''Estragon',		'principal',0,'true');
+insert into product (name,type, price, enable) values ('Ravioli ï¿½ l''Estragon',		'principal',0,'true');
 insert into product (name,type, price, enable) values ('Escargots Romano',			'principal',0,'true');
 insert into product (name,type, price, enable) values ('Tarte Tiramisu',			'principal',0,'true');
 insert into product (name,type, price, enable) values ('Veau Marsala',				'principal',0,'true');
 
 --Insertion de 10 desserts
 insert into product (name,type, price, enable) values ('Tiramisu aux Fraises',			'desserts',0,'true');
-insert into product (name,type, price, enable) values ('Crème Brûlée al Limone',		'desserts',0,'true');
+insert into product (name,type, price, enable) values ('Crï¿½me Brï¿½lï¿½e al Limone',		'desserts',0,'true');
 insert into product (name,type, price, enable) values ('Profiteroles al Cioccolato',	'desserts',0,'true');
 insert into product (name,type, price, enable) values ('Pizza Dolce Nutella',			'desserts',0,'true');
-insert into product (name,type, price, enable) values ('Cannoli à la Framboise',		'desserts',0,'true');
+insert into product (name,type, price, enable) values ('Cannoli ï¿½ la Framboise',		'desserts',0,'true');
 insert into product (name,type, price, enable) values ('Macarons alla Nutella',			'desserts',0,'true');
 insert into product (name,type, price, enable) values ('Panna Cotta aux Fruits Rouges',	'desserts',0,'true');
 insert into product (name,type, price, enable) values ('Tartelette au Pistache',		'desserts',0,'true');
-insert into product (name,type, price, enable) values ('Gelato à la Lavande',			'desserts',0,'true');
+insert into product (name,type, price, enable) values ('Gelato ï¿½ la Lavande',			'desserts',0,'true');
 insert into product (name,type, price, enable) values ('Calzone aux Fruits',			'desserts',0,'true');
 
 --Association des cocktails et ingredients
@@ -178,7 +178,7 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Mangue'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Berry Bliss Punch'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Pêches'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'Pï¿½ches'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Citrus ZingaRita'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Cranberries'));	
@@ -193,7 +193,7 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Thym'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Midnight Serenade'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Mûres'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'Mï¿½res'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Midnight Serenade'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Estragon'));	
@@ -202,7 +202,7 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Pamplemousse'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Velvet Moonshine'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Sésame'));
+	(select ingredient.id as ingredientId	from ingredient where name like 'Sï¿½same'));
 
 --Association des softs et ingredients
 insert into product_ingredients (product_id, ingredients_id) values (
@@ -228,15 +228,15 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Poivre de Cayenne'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Jus'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Épinard'));
+	(select ingredient.id as ingredientId	from ingredient where name like 'ï¿½pinard'));
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Diabolo'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Ciboulette'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Diabolo'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Mûres blanches'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'Mï¿½res blanches'));	
 
---associations des entrées et ingrédients
+--associations des entrï¿½es et ingrï¿½dients
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Antipasto Assortito'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Parmesan'));	
@@ -254,7 +254,7 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Riz basmati'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Bruschetta Rustica'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Noix de coco râpée'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'Noix de coco rï¿½pï¿½e'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Carpaccio di Pesce'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Pruneaux'));	
@@ -296,9 +296,9 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Chocolat noir'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Prosciutto Dolce'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Yaourt à la vanille'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'Yaourt ï¿½ la vanille'));	
 
---association des pizza et ingrédients
+--association des pizza et ingrï¿½dients
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Calzone Aperto Mare'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Pignons de pin'));	
@@ -310,18 +310,18 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Tofu'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Pizza Artichaut Bresaola'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Édam'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'ï¿½dam'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Pizza Carbonara Etna'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Piments jalapeños'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'Piments jalapeï¿½os'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Pizza Carbonara Etna'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Aneth'));	
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Pizza Chèvre Pesto'),
+	(select product.id as productId	from product where name like 'Pizza Chï¿½vre Pesto'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Chou-fleur'));	
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Pizza Chèvre Pesto'),
+	(select product.id as productId	from product where name like 'Pizza Chï¿½vre Pesto'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Wasabi'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Pizza Escargot Gorgonzola'),
@@ -334,7 +334,7 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Pistaches'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Pizza Margherita Romantica'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Basilic sacré'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'Basilic sacrï¿½'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Pizza Poulet Prosciutto'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Lentilles'));	
@@ -354,20 +354,20 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Pizza Ratatouille Napoli'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Fenouil'));	
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Pizza Saumon Fumé Bianca'),
+	(select product.id as productId	from product where name like 'Pizza Saumon Fumï¿½ Bianca'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Feuilles de menthe'));	
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Pizza Saumon Fumé Bianca'),
+	(select product.id as productId	from product where name like 'Pizza Saumon Fumï¿½ Bianca'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Noisettes'));	
 
 
---Association des plats et ingrédients
+--Association des plats et ingrï¿½dients
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Escalopes Bolognaises'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Persil plat'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Escalopes Bolognaises'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Cacahuètes'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'Cacahuï¿½tes'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Escargots Romano'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Oignon'));	
@@ -381,10 +381,10 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Fruits de Mer Florentins'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Poivre noir'));	
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Lasagne Gratinées'),
+	(select product.id as productId	from product where name like 'Lasagne Gratinï¿½es'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Aubergine'));	
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Lasagne Gratinées'),
+	(select product.id as productId	from product where name like 'Lasagne Gratinï¿½es'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Paprika'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Poulet Milanese'),
@@ -393,16 +393,16 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Poulet Milanese'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Myrtilles'));	
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Poulet Provençal'),
+	(select product.id as productId	from product where name like 'Poulet Provenï¿½al'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Pois chiches'));	
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Poulet Provençal'),
+	(select product.id as productId	from product where name like 'Poulet Provenï¿½al'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Airelles'));
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Ravioli à l''Estragon'),
+	(select product.id as productId	from product where name like 'Ravioli ï¿½ l''Estragon'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Poivre rose'));	
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Ravioli à l''Estragon'),
+	(select product.id as productId	from product where name like 'Ravioli ï¿½ l''Estragon'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Roquette'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Risotto aux Champignons'),
@@ -412,10 +412,10 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Concombre'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Tarte Tiramisu'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Gruyère'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'Gruyï¿½re'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Tarte Tiramisu'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Viande de bœuf'));	
+	(select ingredient.id as ingredientId	from ingredient where name like 'Viande de bï¿½uf'));	
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Veau Marsala'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Potiron'));	
@@ -423,7 +423,7 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Veau Marsala'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Cardamome'));
 
---association des desserts et ingrédients
+--association des desserts et ingrï¿½dients
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Calzone aux Fruits'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Jambon'));
@@ -431,23 +431,23 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Calzone aux Fruits'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Persil'));
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Cannoli à la Framboise'),
+	(select product.id as productId	from product where name like 'Cannoli ï¿½ la Framboise'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Yaourt'));
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Cannoli à la Framboise'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Fromage de chèvre'));
+	(select product.id as productId	from product where name like 'Cannoli ï¿½ la Framboise'),
+	(select ingredient.id as ingredientId	from ingredient where name like 'Fromage de chï¿½vre'));
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Crème Brûlée al Limone'),
+	(select product.id as productId	from product where name like 'Crï¿½me Brï¿½lï¿½e al Limone'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Amandes'));
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Crème Brûlée al Limone'),
+	(select product.id as productId	from product where name like 'Crï¿½me Brï¿½lï¿½e al Limone'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Tomate cerise'));
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Gelato à la Lavande'),
+	(select product.id as productId	from product where name like 'Gelato ï¿½ la Lavande'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Huile d''olive'));
 insert into product_ingredients (product_id, ingredients_id) values (
-	(select product.id as productId	from product where name like 'Gelato à la Lavande'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Mangue séchée'));
+	(select product.id as productId	from product where name like 'Gelato ï¿½ la Lavande'),
+	(select ingredient.id as ingredientId	from ingredient where name like 'Mangue sï¿½chï¿½e'));
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Macarons alla Nutella'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Poivre vert'));
@@ -465,7 +465,7 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Roquefort'));
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Pizza Dolce Nutella'),
-	(select ingredient.id as ingredientId	from ingredient where name like 'Viande hachée'));
+	(select ingredient.id as ingredientId	from ingredient where name like 'Viande hachï¿½e'));
 insert into product_ingredients (product_id, ingredients_id) values (
 	(select product.id as productId	from product where name like 'Profiteroles al Cioccolato'),
 	(select ingredient.id as ingredientId	from ingredient where name like 'Asperges'));
@@ -489,274 +489,274 @@ insert into product_ingredients (product_id, ingredients_id) values (
 --SET IDENTITY_INSERT _order ON;
 
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (1,'Bella Donne',		'11:30',	5,	'true',	'ready');
-insert into _order (id, client_name, time_slot, table_number, paid, status) values (2,'Ray Négat',			'12:15',	8,	'true',	'ready');
+insert into _order (id, client_name, time_slot, table_number, paid, status) values (2,'Ray Nï¿½gat',			'12:15',	8,	'true',	'ready');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (3,'Gilbert Lingot',		'14:00',	-1,	'true',	'ready');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (4,'Jean Tenbien',		'15:45',	2,	'true',	'ready');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (5,'Paul Aire',			'17:20',	1,	'false','ready');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (6,'Anne Imal',			'18:50',	9,	'false','ready');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (7,'Jim Nastique',		'20:00',	3,	'false','ready');
-insert into _order (id, client_name, time_slot, table_number, paid, status) values (8,'Emmy Sphère',		'20:15',	0,	'false','ready');
+insert into _order (id, client_name, time_slot, table_number, paid, status) values (8,'Emmy Sphï¿½re',		'20:15',	0,	'false','ready');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (9,'Ela Trobu',			'20:25',	-1,	'true',	'ready');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (10,'Aubin Gladesh',		'20:30',	6,	'false','ready');
-insert into _order (id, client_name, time_slot, table_number, paid, status) values (11,'Théo Courant',		'20:40',	-1,	'true',	'waiting');
+insert into _order (id, client_name, time_slot, table_number, paid, status) values (11,'Thï¿½o Courant',		'20:40',	-1,	'true',	'waiting');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (12,'Paul Issier',		'21:05',	-1,	'true',	'waiting');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (13,'Blanche Isserie',	'21:20',	-1,	'true',	'waiting');
-insert into _order (id, client_name, time_slot, table_number, paid, status) values (14,'Ève Anescense',		'21:30',	-1,	'true',	'waiting');
+insert into _order (id, client_name, time_slot, table_number, paid, status) values (14,'ï¿½ve Anescense',		'21:30',	-1,	'true',	'waiting');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (15,'Ycare Abine',		'21:40',	-1,	'true',	'waiting');
-insert into _order (id, client_name, time_slot, table_number, paid, status) values (16,'Jerry Golé',		'21:50',	7,	'false','waiting');
+insert into _order (id, client_name, time_slot, table_number, paid, status) values (16,'Jerry Golï¿½',		'21:50',	7,	'false','waiting');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (17,'Gaspard Touze',		'22:00',	4,	'false','waiting');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (18,'Homer Dalors',		'22:15',	8,	'false','waiting');
-insert into _order (id, client_name, time_slot, table_number, paid, status) values (19,'Jerry Golé',		'22:30',	2,	'false','waiting');
+insert into _order (id, client_name, time_slot, table_number, paid, status) values (19,'Jerry Golï¿½',		'22:30',	2,	'false','waiting');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (20,'Aude Javel',		'22:45',	9,	'false','waiting');
 
 --SET IDENTITY_INSERT _order OFF;
 
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	1,1,
 	(select id from product where name like 'Pizza Ratatouille Napoli'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	1,2,
-	(select id from product where name like 'Pizza Chèvre Pesto'),2,
+	(select id from product where name like 'Pizza Chï¿½vre Pesto'),2,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	1,3,
 	(select id from product where name like 'Redbull'),1,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	1,4,
 	(select id from product where name like 'Diabolo'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	2,1,
 	(select id from product where name like 'Velvet Moonshine'),1,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	2,2,
 	(select id from product where name like 'Poulet Milanese'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	3,1,
 	(select id from product where name like 'Profiteroles al Cioccolato'),2,
-	'al dente avec une sauce tomate maison et un supplément de parmesan râpé.'
+	'al dente avec une sauce tomate maison et un supplï¿½ment de parmesan rï¿½pï¿½.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	3,2,
 	(select id from product where name like 'Prosciutto Dolce'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	4,1,
 	(select id from product where name like 'Tiramisu aux Fraises'),4,
-	'gratinée avec supplément de fromage fondu sur le dessus.'
+	'gratinï¿½e avec supplï¿½ment de fromage fondu sur le dessus.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	4,2,
-	(select id from product where name like 'Cannoli à la Framboise'),3,
+	(select id from product where name like 'Cannoli ï¿½ la Framboise'),3,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	4,3,
 	(select id from product where name like 'Risotto aux Champignons'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	4,4,
-	(select id from product where name like 'Crème Brûlée al Limone'),2,
+	(select id from product where name like 'Crï¿½me Brï¿½lï¿½e al Limone'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	5,1,
 	(select id from product where name like 'Arancini Siciliani'),2,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	5,2,
 	(select id from product where name like 'Gnocchi al Ragu'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	5,3,
 	(select id from product where name like 'Fizzy Mango Breeze'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	6,1,
 	(select id from product where name like 'Fruits de Mer Florentins'),4,
-	'bien cuits, avec supplément de basilic frais.'
+	'bien cuits, avec supplï¿½ment de basilic frais.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	6,2,
 	(select id from product where name like 'Carpaccio di Pesce'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	6,3,
 	(select id from product where name like 'Panna Cotta aux Fruits Rouges'),3,
-	'calzone avec supplément de pepperoni, bien cuite et croustillante.'
+	'calzone avec supplï¿½ment de pepperoni, bien cuite et croustillante.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	6,4,
 	(select id from product where name like 'Calzone aux Fruits'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	7,1,
 	(select id from product where name like 'Antipasto Assortito'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	8,2,
 	(select id from product where name like 'Pizza Escargot Gorgonzola'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	8,3,
 	(select id from product where name like 'Berry Bliss Punch'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	9,1,
 	(select id from product where name like 'Bruschetta Rustica'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	9,2,
 	(select id from product where name like 'Insalata Mista'),1,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	9,3,
 	(select id from product where name like 'Limonade'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,1,
 	(select id from product where name like 'Mozzarella Fresca'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,2,
 	(select id from product where name like 'Calzone Aperto Mare'),2,
-	'sauce pesto, avec supplément de pignons de pin.'
+	'sauce pesto, avec supplï¿½ment de pignons de pin.'
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,3,
 	(select id from product where name like 'Pizza Quatre Fromages Amore'),4,
-	'carbonara, avec supplément de pancetta croustillante.'
+	'carbonara, avec supplï¿½ment de pancetta croustillante.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,4,
 	(select id from product where name like 'Pizza Artichaut Bresaola'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,5,
 	(select id from product where name like 'Pizza Carbonara Etna'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	10,6,
 	(select id from product where name like 'Jus'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	11,1,
 	(select id from product where name like 'Tarte Tiramisu'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	11,2,
 	(select id from product where name like 'Fritto Mare'),4,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	11,3,
 	(select id from product where name like 'Macarons alla Nutella'),1,
-	'avec supplément de truffe.'
+	'avec supplï¿½ment de truffe.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	12,1,
 	(select id from product where name like 'Escalopes Bolognaises'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	12,2,
-	(select id from product where name like 'Poulet Provençal'),2,
+	(select id from product where name like 'Poulet Provenï¿½al'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	13,1,
 	(select id from product where name like 'Pizza Dolce Nutella'),2,
 	null
 	);	
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	13,2,
 	(select id from product where name like 'Tartelette au Pistache'),4,
-	'végétarienne avec supplément de champignons, poivrons et olives noires.'
+	'vï¿½gï¿½tarienne avec supplï¿½ment de champignons, poivrons et olives noires.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	13,3,
 	(select id from product where name like 'Pizza Poulet Prosciutto'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	14,1,
 	(select id from product where name like 'Veau Marsala'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	15,1,
 	(select id from product where name like 'Coca'),1,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	15,2,
-	(select id from product where name like 'Ravioli à l''Estragon'),4,
-	'margherita avec supplément de mozzarella di bufala et tomates cerises.'
+	(select id from product where name like 'Ravioli ï¿½ l''Estragon'),4,
+	'margherita avec supplï¿½ment de mozzarella di bufala et tomates cerises.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	16,1,
 	(select id from product where name like 'Pizza Margherita Romantica'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	16,2,
-	(select id from product where name like 'Pizza Saumon Fumé Bianca'),3,
+	(select id from product where name like 'Pizza Saumon Fumï¿½ Bianca'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	16,3,
 	(select id from product where name like 'Midnight Serenade'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	17,1,
-	(select id from product where name like 'Gelato à la Lavande'),4,
+	(select id from product where name like 'Gelato ï¿½ la Lavande'),4,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	17,2,
-	(select id from product where name like 'Lasagne Gratinées'),1,
-	'supplément d''anchois sur une moitié.'
+	(select id from product where name like 'Lasagne Gratinï¿½es'),1,
+	'supplï¿½ment d''anchois sur une moitiï¿½.'
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	18,1,
 	(select id from product where name like 'Citrus ZingaRita'),2,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	19,1,
 	(select id from product where name like 'Escargots Romano'),3,
 	null
 	);
-insert into order_line (order_id, line_number, product_id, ammount, note) values (
+insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	20,1,
 	(select id from product where name like 'Polenta Funghi'),1,
 	null

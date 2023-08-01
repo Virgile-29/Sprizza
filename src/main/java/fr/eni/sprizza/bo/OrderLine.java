@@ -20,7 +20,9 @@ public class OrderLine {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "order_id")
 	private Order order;
-	
+
+
+
 	@Id
 	private Long lineNumber;
 	
@@ -31,12 +33,12 @@ public class OrderLine {
 	@ManyToOne
 	private Product product;
 
-	public Long getId() {
+	public Long getLineNumber() {
 		return lineNumber;
 	}
 
-	public void setId(Long id) {
-		this.lineNumber = id;
+	public void setLineNumber(Long lineNumber) {
+		this.lineNumber = lineNumber;
 	}
 
 	public int getQuantity() {
@@ -79,6 +81,10 @@ public class OrderLine {
 			super();
 			this.lineNumber = lineNumber;
 			this.order = order;
+		}
+
+		public OrderLineId() {
+
 		}
 
 		public Long getId() {

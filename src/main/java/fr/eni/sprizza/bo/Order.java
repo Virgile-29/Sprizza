@@ -1,5 +1,6 @@
 package fr.eni.sprizza.bo;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -7,20 +8,20 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "_Order")
+@Table(name = "_order")
 public class Order {
-	
+
 	@Id
-    @Basic(optional = false)
-    @Column(name = "id",unique=true, nullable = false)
-	private long id;
+	@Column(name = "id",unique=true, nullable = false)
+	private Long id;
 	
 	private String clientName;
-	
-	private LocalTime timeSlot;
-	
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private LocalDateTime timeSlot;
+
 	private String status;
-	
+
 	private Boolean paid;
 	
 	private int tableNumber;
@@ -32,7 +33,7 @@ public class Order {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -44,11 +45,11 @@ public class Order {
 		this.clientName = clientName;
 	}
 
-	public LocalTime getTimeSlot() {
+	public LocalDateTime getTimeSlot() {
 		return timeSlot;
 	}
 
-	public void setTimeSlot(LocalTime timeSlot) {
+	public void setTimeSlot(LocalDateTime timeSlot) {
 		this.timeSlot = timeSlot;
 	}
 
@@ -81,6 +82,7 @@ public class Order {
 	}
 
 	public void setLines(List<OrderLine> lines) {
+
 		this.lines = lines;
 	}
 

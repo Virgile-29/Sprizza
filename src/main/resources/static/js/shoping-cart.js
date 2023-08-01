@@ -2,6 +2,7 @@ class Line {
     name
     product
     quantity = 0
+    lineNumber
 }
 
 
@@ -25,10 +26,13 @@ const ShoppingCart = {
             } else {
                 const line = new Line()
                 line.product = ShoppingCart.products[i][0]
-                line.quantity ++
+                line.quantity = 1
                 lines.push(line)
+                line.lineNumber = lines.length
+                console.log(line)
             }
         }
+        localStorage.setItem("order", JSON.stringify(lines))
         return lines
     },
     linesName: function () {
