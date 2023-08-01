@@ -486,7 +486,7 @@ insert into product_ingredients (product_id, ingredients_id) values (
 	(select ingredient.id as ingredientId	from ingredient where name like 'Avocat'));
 
 --insertion de 20 commandes
---SET IDENTITY_INSERT _order ON;
+SET IDENTITY_INSERT _order ON;
 
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (1,'Bella Donne',		'11:30',	5,	'true',	'ready');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (2,'Ray N�gat',			'12:15',	8,	'true',	'ready');
@@ -509,7 +509,7 @@ insert into _order (id, client_name, time_slot, table_number, paid, status) valu
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (19,'Jerry Gol�',		'22:30',	2,	'false','waiting');
 insert into _order (id, client_name, time_slot, table_number, paid, status) values (20,'Aude Javel',		'22:45',	9,	'false','waiting');
 
---SET IDENTITY_INSERT _order OFF;
+SET IDENTITY_INSERT _order OFF;
 
 insert into order_line (order_id, line_number, product_id, quantity, note) values (
 	1,1,

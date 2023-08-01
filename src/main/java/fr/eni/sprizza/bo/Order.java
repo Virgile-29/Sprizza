@@ -2,6 +2,7 @@ package fr.eni.sprizza.bo;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -12,6 +13,7 @@ import jakarta.persistence.*;
 public class Order {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id",unique=true, nullable = false)
 	private Long id;
 	
@@ -81,10 +83,18 @@ public class Order {
 		return lines;
 	}
 
-	public void setLines(List<OrderLine> lines) {
+//	public void setLines(List<OrderLine> lines) {
+//		lines.forEach((item) -> item.setOrder(this));
+//		this.lines = lines;
+//	}
 
-		this.lines = lines;
-	}
+//	public void addOrderLine(OrderLine line) {
+//		if (lines == null) {
+//			lines = new ArrayList<>();
+//		}
+//		lines.add(line);
+//		line.setOrder(this);
+//	}
 
 	@Override
 	public String toString() {

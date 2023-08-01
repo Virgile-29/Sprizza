@@ -42,6 +42,8 @@ public class NewOrderController {
     public String newOrderPost(@RequestBody Order order) {
         System.out.println(order);
         orderService.saveOrder(order);
+        System.out.println("************************");
+        System.out.println(order);
         return "redirect:/admin";
     }
 }

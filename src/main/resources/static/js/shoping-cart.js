@@ -66,8 +66,8 @@ function validateShoppingCart() {
     order.clientName = name
     order.tableNumber = tableNumber
     order.lines = ShoppingCart.linesId()
-    console.log(order)
     const JSONOrder = JSON.stringify(order)
+    console.log(JSONOrder)
     localStorage.setItem("cart", JSON.stringify(JSONOrder))
     submitCart(JSONOrder)
 }

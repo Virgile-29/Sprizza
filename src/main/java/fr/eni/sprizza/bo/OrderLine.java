@@ -16,17 +16,14 @@ import jakarta.persistence.ManyToOne;
 public class OrderLine {
 	
 	@Id
-	@GeneratedValue
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "order_id")
 	private Order order;
 
-
-
 	@Id
 	private Long lineNumber;
 	
-	private int quantity;
+	private Integer quantity;
 	
 	private String note;
 	
@@ -45,7 +42,7 @@ public class OrderLine {
 		return quantity;
 	}
 
-	public void getQuantity(int quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
 
@@ -60,6 +57,12 @@ public class OrderLine {
 	public Order getOrder() {
 		return order;
 	}
+
+//	public void setOrder(Order order) {
+//		if (this.order != null) this.order.getLines().remove(this);
+//		order.addOrderLine(this);
+//		this.order = order;
+//	}
 
 	public void setOrder(Order order) {
 		this.order = order;
