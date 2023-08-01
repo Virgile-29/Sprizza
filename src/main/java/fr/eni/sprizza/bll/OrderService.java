@@ -8,4 +8,6 @@ public interface OrderService {
 	public List<Order> findAll();
 
 	public void save(Order order);
+
+	public Order findById(Long id) throws BLLException;
 }

@@ -18,14 +18,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     
     
-    
     <!-- Jquery -->
     <script src="jquery-3.6.4.min.js"></script>
 	
 </head>
 	<body>
 		<h2>Commandes du jour : </h2>
-		<form>
+		<form th:action="@{/admin/dailyOrder}" method="post">
 			<table class="table">
 				<thead>
 					<tr>
@@ -60,7 +59,7 @@
 							<td th:if="${order.status == 'ready'}">Commande prête</td>
 							<td th:if="${order.status == 'waiting'}">Commande en attente</td>
 							<td>
-								<span style="">
+								<span sec:authorize="hasrole('cook')>
 									<span th:if="${order.paid == true}">Payé</span>
 									<span th:if="${order.paid == false}">Non Payé</td>
 								</span>	
@@ -88,7 +87,7 @@
 							<td>
 								<input th:attr="
 										type=checkbox, class=btn-check, autocomplete=off,
-										value=${order.paid},
+										value=!${order.paid},
 										name='order#'+ ${order.id} + '.paid',
 										id='order#'+ ${order.id} + '.paid'">
 								<label class="btn" th:attrappend="for='order#'+ ${order.id} + '.paid'">

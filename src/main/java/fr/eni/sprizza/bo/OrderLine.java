@@ -6,6 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 
 
 @Entity
@@ -14,7 +16,8 @@ public class OrderLine {
 	
 	@Id
 	@ManyToOne(fetch=FetchType.EAGER, optional = false)
-	@JoinColumn(name = "order_id")
+	@MapsId
+	@PrimaryKeyJoinColumn(name = "order_id", referencedColumnName="id")
 	private Order order;
 	
 	@Id

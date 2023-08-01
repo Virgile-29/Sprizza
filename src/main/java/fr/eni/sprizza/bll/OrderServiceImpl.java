@@ -26,4 +26,14 @@ public class OrderServiceImpl implements OrderService{
 		this.orderRepository.save(order);
 		
 	}
+
+	@Override
+	public Order findById(Long id) throws BLLException {
+		
+		try {
+			return orderRepository.findById(id).orElse(null);
+		} catch (Exception e) {
+			throw new BLLException("Le produit n'existe pas/plus.");
+		}
+	}
 }

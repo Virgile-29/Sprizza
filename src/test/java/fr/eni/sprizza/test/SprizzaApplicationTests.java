@@ -1,18 +1,13 @@
 package fr.eni.sprizza.test;
 
-import fr.eni.sprizza.bo.User;
-import fr.eni.sprizza.dal.UserRepository;
-
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import fr.eni.sprizza.bo.Order;
-import fr.eni.sprizza.bo.OrderLine;
-import fr.eni.sprizza.dal.OrderRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import fr.eni.sprizza.bo.User;
+import fr.eni.sprizza.dal.OrderRepository;
+import fr.eni.sprizza.dal.UserRepository;
 
 @SpringBootTest
 class SprizzaApplicationTests {
@@ -53,7 +48,7 @@ class SprizzaApplicationTests {
 		User pizzaiolo = new User();
 		pizzaiolo.setUsername("Mario");
 		pizzaiolo.setPassword(pwEncoder.encode("azerty"));
-		pizzaiolo.setRole("cuisinier");
+		pizzaiolo.setRole("cook");
 
 
 		userRepository.save(manager);
