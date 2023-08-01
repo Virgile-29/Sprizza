@@ -11,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import fr.eni.sprizza.bo.Order;
 import fr.eni.sprizza.bo.OrderLine;
-import fr.eni.sprizza.dal.OrderLineRepository;
 import fr.eni.sprizza.dal.OrderRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -20,13 +19,11 @@ class SprizzaApplicationTests {
 	
 	private OrderRepository orderRepository;
 	private UserRepository userRepository;
-	private OrderLineRepository orderLineRepository;
 
     @Autowired
-    public SprizzaApplicationTests(OrderRepository orderRepository, UserRepository userRepository, OrderLineRepository orderLineRepository) {
+    public SprizzaApplicationTests(OrderRepository orderRepository, UserRepository userRepository) {
         this.orderRepository = orderRepository;
 		this.userRepository = userRepository;
-		this.orderLineRepository = orderLineRepository;
     }
 	
 	@Test
@@ -44,13 +41,6 @@ class SprizzaApplicationTests {
 		if(userRepository.getUserByUserName("Michou") == null) {
 			createUsers();
 		}
-		
-		List<OrderLine> orderLines = orderLineRepository.findAll();
-		
-		System.out.println(orderLines.get(0));
-		
-		String test = "";
-
 	}
 
 	private void createUsers() {
