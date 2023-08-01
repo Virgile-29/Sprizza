@@ -1,9 +1,11 @@
 package fr.eni.sprizza.bo;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Basic;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -20,6 +22,7 @@ public class Order {
 	
 	@Id
     @Basic(optional = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id",unique=true, nullable = false)
 	private long id;
 	
@@ -33,7 +36,7 @@ public class Order {
 	
 	private int tableNumber;
 	
-	@OneToMany(mappedBy = "order")
+	@OneToMany(mappedBy = "order", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<OrderLine> lines;
 
 	public long getId() {
@@ -90,5 +93,13 @@ public class Order {
 
 	public void setLines(List<OrderLine> lines) {
 		this.lines = lines;
+	}
+	
+	public void addOrderLine(OrderLine line) {
+		if (lines == null) {
+			lines = new ArrayList<>();
+		}
+		lines.add(line);
+		line.setOrder(this);
 	}
 }

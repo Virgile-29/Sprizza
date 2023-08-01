@@ -2,11 +2,15 @@ package fr.eni.sprizza.test;
 
 import fr.eni.sprizza.bo.User;
 import fr.eni.sprizza.dal.UserRepository;
+
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import fr.eni.sprizza.bo.Order;
+import fr.eni.sprizza.bo.OrderLine;
 import fr.eni.sprizza.dal.OrderRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -37,7 +41,6 @@ class SprizzaApplicationTests {
 		if(userRepository.getUserByUserName("Michou") == null) {
 			createUsers();
 		}
-
 	}
 
 	private void createUsers() {
@@ -55,6 +58,8 @@ class SprizzaApplicationTests {
 
 		userRepository.save(manager);
 		userRepository.save(pizzaiolo);
+		
+		
 	}
 
 }
