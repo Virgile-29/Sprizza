@@ -32,13 +32,13 @@
 						<th scope="col">Nom Client</th>
 						<th scope="col">Heure de la commande</th>
 						<th>
-							<span style="">
+							<span sec:authorize="hasAuthority('manager')">
 								<span scope="col">Table/À emporter</span>
 							</span>	
 						</th>
 						<th scope="col">Statut</th>
 						<th>
-							<span style="">
+							<span sec:authorize="hasAuthority('manager')">
 								<span scope="col">Payé</span>
 							</span>	
 						</th>
@@ -51,7 +51,7 @@
 							<td th:text="${order.clientName}"></td>
 							<td th:text="${order.timeSlot}"></td>
 							<td>
-								<span style="">
+								<span sec:authorize="hasAuthority('manager')">
 									<span th:if="${order.tableNumber != -1}" th:text="'table ' + ${order.tableNumber}"></span>
 									<span th:if="${order.tableNumber == -1}">Commande en ligne</span>
 								</span>	
@@ -59,7 +59,7 @@
 							<td th:if="${order.status == 'ready'}">Commande prête</td>
 							<td th:if="${order.status == 'waiting'}">Commande en attente</td>
 							<td>
-								<span sec:authorize="hasrole('cook')>
+								<span sec:authorize="hasAuthority('manager')">
 									<span th:if="${order.paid == true}">Payé</span>
 									<span th:if="${order.paid == false}">Non Payé</td>
 								</span>	
@@ -84,7 +84,7 @@
 									</i>
 								</label>
 							</td>
-							<td>
+							<td sec:authorize="hasAuthority('manager')">
 								<input th:attr="
 										type=checkbox, class=btn-check, autocomplete=off,
 										value=!${order.paid},
