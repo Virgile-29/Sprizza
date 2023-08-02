@@ -10,7 +10,7 @@ import fr.eni.sprizza.dal.OrderRepository;
 
 @Service
 public class OrderServiceImpl implements OrderService{
-	private OrderRepository orderRepository;
+	private final OrderRepository orderRepository;
 	
 	@Autowired
 	public OrderServiceImpl(OrderRepository orderRepository) {

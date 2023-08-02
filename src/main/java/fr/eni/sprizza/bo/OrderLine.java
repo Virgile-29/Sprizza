@@ -1,49 +1,44 @@
 package fr.eni.sprizza.bo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+import java.io.Serializable;
 
+import jakarta.persistence.*;
 
 @Entity
-@IdClass(OrderLineId.class)
 public class OrderLine {
-	
-	@Id
-	@ManyToOne(fetch=FetchType.EAGER, optional = false)
-	@MapsId
-	@PrimaryKeyJoinColumn(name = "order_id", referencedColumnName="id")
+
+	@EmbeddedId
+	private OrderLineId id;
+
+	@MapsId("orderId")
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Order order;
-	
-	@Id
-	private Long lineNumber;
-	
-	private int ammount;
-	
+
+	private Integer quantity;
+
 	private String note;
-	
+
 	@ManyToOne
 	private Product product;
 
+	public OrderLine() {
+		this.id = new OrderLineId();
+	}
+
 	public Long getLineNumber() {
-		return lineNumber;
+		return this.id.getLineNumber();
 	}
 
-	public void setLineNumber(Long id) {
-		this.lineNumber = id;
+	public void setLineNumber(Long lineNumber) {
+		this.id.setLineNumber(lineNumber);
 	}
 
-	public int getAmmount() {
-		return ammount;
+	public int getQuantity() {
+		return quantity;
 	}
 
-	public void setAmmount(int ammount) {
-		this.ammount = ammount;
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
 	public Product getProduct() {
@@ -55,12 +50,16 @@ public class OrderLine {
 	}
 
 	public Order getOrder() {
-		return order;
+		return this.order;
 	}
 
+//	public void setOrder(Order order) {
+//		if (this.order != null) this.order.getLines().remove(this);
+//		order.addOrderLine(this);
+//		this.order = order;
+//	}
+
 	public void setOrder(Order order) {
-		if (this.order != null) this.order.getLines().remove(this);
-		order.addOrderLine(this);
 		this.order = order;
 	}
 
@@ -71,5 +70,19 @@ public class OrderLine {
 	public void setNote(String note) {
 		this.note = note;
 	}
-	
+
+	public OrderLineId getId() {
+		return id;
+	}
+
+	public void setId(OrderLineId id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "OrderLine{ lineNumber=" + getLineNumber() + ", quantity=" + quantity
+				+ ", note='" + note + '\'' + ", product=" + product + '}';
+	}
+
 }

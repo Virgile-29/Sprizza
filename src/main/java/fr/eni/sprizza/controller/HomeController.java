@@ -10,7 +10,6 @@ public class HomeController {
     @GetMapping("/admin")
     public String homePage( ) {
         Authentication auth = SecurityContextHolder.getContext(). getAuthentication();
-        System.out.println(auth.getName());
         return "adminHomePage";
     }
 }
