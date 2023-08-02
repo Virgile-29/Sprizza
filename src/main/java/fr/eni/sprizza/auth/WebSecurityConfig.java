@@ -48,16 +48,17 @@ public class WebSecurityConfig {
      */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http)throws Exception {
-        http.authorizeHttpRequests((authorize) -> authorize.anyRequest().authenticated())
-                .formLogin((form) -> form
-                        .loginPage("/admin/login")
-                        .permitAll()
-                        .defaultSuccessUrl("/admin", true)
-                )
+        http.authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers("/admin").authenticated()
+                        .requestMatchers("/new-order").permitAll())
+                            .formLogin((form) -> form
+                                .loginPage("/admin/login")
+                                .permitAll()
+                                .defaultSuccessUrl("/admin", true)
+                        )
                 // TODO: CSRF protection
                 // CSRF Disabled for development purposes
-                .csrf().disable()
-                .httpBasic(Customizer.withDefaults());
+                .csrf().disable();
         return http.build();
     }
 
