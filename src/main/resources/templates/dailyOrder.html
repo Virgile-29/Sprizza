@@ -70,7 +70,7 @@
 							<td></td>
 							<td colspan="3">
 								<th:block th:each="line : ${order.lines}">
-									<div th:text="${line.ammount} + ' * ' + ${line.product.name}"> </div>
+									<div th:text="${line.quantity} + ' * ' + ${line.product.name}"> </div>
 								</th:block>
 							</td>
 							<td>

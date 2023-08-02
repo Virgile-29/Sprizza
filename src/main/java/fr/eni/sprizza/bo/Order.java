@@ -1,49 +1,46 @@
 package fr.eni.sprizza.bo;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "_Order")
+@Table(name = "_order")
 public class Order {
-	
+
 	@Id
-    @Basic(optional = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",unique=true, nullable = false)
-	private long id;
-	
+	@Column(name = "id", unique = true, nullable = false)
+	private Long id;
+
 	private String clientName;
-	
-	private LocalTime timeSlot;
-	
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private LocalDateTime timeSlot;
+
 	private String status;
-	
+
 	private Boolean paid;
-	
+
 	private int tableNumber;
-	
-	@OneToMany(mappedBy = "order", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+
+	public Order() {
+		this.status = "waiting";
+		this.paid = false;
+		this.timeSlot = LocalDateTime.now();
+	}
+
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<OrderLine> lines;
 
 	public long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -55,11 +52,11 @@ public class Order {
 		this.clientName = clientName;
 	}
 
-	public LocalTime getTimeSlot() {
+	public LocalDateTime getTimeSlot() {
 		return timeSlot;
 	}
 
-	public void setTimeSlot(LocalTime timeSlot) {
+	public void setTimeSlot(LocalDateTime timeSlot) {
 		this.timeSlot = timeSlot;
 	}
 
@@ -92,14 +89,21 @@ public class Order {
 	}
 
 	public void setLines(List<OrderLine> lines) {
+		lines.forEach((item) -> item.setOrder(this));
 		this.lines = lines;
 	}
-	
+
 	public void addOrderLine(OrderLine line) {
 		if (lines == null) {
 			lines = new ArrayList<>();
 		}
 		lines.add(line);
 		line.setOrder(this);
+	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", clientName=" + clientName + ", timeSlot=" + timeSlot + ", status=" + status
+				+ ", paid=" + paid + ", tableNumber=" + tableNumber + ", lines=" + lines + "]";
 	}
 }

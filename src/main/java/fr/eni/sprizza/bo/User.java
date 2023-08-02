@@ -3,7 +3,7 @@ package fr.eni.sprizza.bo;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "_users")
 public class User {
 
     @Id
@@ -14,7 +14,6 @@ public class User {
     private String password;
     private String role;
 
-
     public Long getId() {
         return id;
     }
@@ -22,7 +21,6 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
-
 
     public String getUsername() {
         return username;

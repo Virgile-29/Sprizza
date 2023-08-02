@@ -22,9 +22,7 @@ public class Product {
 	
 	@Column(unique=true)
 	private String name;
-	
-	private String note;
-	
+
 	private Boolean enable;
 	
 	private String type;
@@ -33,6 +31,13 @@ public class Product {
 	
 	@ManyToMany
 	private List<Ingredient> ingredients;
+	public Product() {
+		super();
+	}
+	public Product(Integer id) {
+		super();
+		this.id = id;
+	}
 
 	public int getId() {
 		return id;
@@ -48,14 +53,6 @@ public class Product {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getNote() {
-		return note;
-	}
-
-	public void setNote(String note) {
-		this.note = note;
 	}
 
 	public Boolean getEnable() {
@@ -88,5 +85,9 @@ public class Product {
 
 	public void setPrice(float price) {
 		this.price = price;
+	}
+
+	public String toString() {
+		return this.name + " " + this.price + "€" + " " + this.type + " " + this.ingredients + " " + this.enable + " " + this.id;
 	}
 }
