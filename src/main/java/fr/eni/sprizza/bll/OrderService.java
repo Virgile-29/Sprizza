@@ -1,5 +1,7 @@
 package fr.eni.sprizza.bll;
+
 import java.util.List;
+
 import fr.eni.sprizza.bo.Order;
 
 public interface OrderService {	
@@ -7,4 +9,5 @@ public interface OrderService {
 
 	public void save(Order order);
 
+	public Order findById(Long id) throws BLLException;
 }

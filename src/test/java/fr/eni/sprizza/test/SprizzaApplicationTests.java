@@ -1,16 +1,13 @@
 package fr.eni.sprizza.test;
 
-import fr.eni.sprizza.bo.User;
-import fr.eni.sprizza.dal.UserRepository;
-
-import java.util.List;
-
-import org.aspectj.weaver.ast.Or;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import fr.eni.sprizza.dal.OrderRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import fr.eni.sprizza.bo.User;
+import fr.eni.sprizza.dal.OrderRepository;
+import fr.eni.sprizza.dal.UserRepository;
 
 @SpringBootTest
 class SprizzaApplicationTests {
@@ -27,6 +24,15 @@ class SprizzaApplicationTests {
 	@Test
 	void contextLoads() {
 
+//		System.out.println("test");
+//
+//		Order123 order = new Order123();
+//		order.setClientName("joe");
+//
+//		orderRepository.save(order);
+//
+//		orderRepository.findAll().forEach(orderItem -> System.out.println(orderItem));
+
 		if(userRepository.getUserByUserName("Michou") == null) {
 			createUsers();
 		}
@@ -42,17 +48,13 @@ class SprizzaApplicationTests {
 		User pizzaiolo = new User();
 		pizzaiolo.setUsername("Mario");
 		pizzaiolo.setPassword(pwEncoder.encode("azerty"));
-		pizzaiolo.setRole("cuisinier");
+		pizzaiolo.setRole("cook");
 
 
 		userRepository.save(manager);
 		userRepository.save(pizzaiolo);
 		
 		
-	}
-
-	private void createOrder() {
-
 	}
 
 }
