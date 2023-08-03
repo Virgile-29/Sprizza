@@ -3,6 +3,7 @@ package fr.eni.sprizza.bll;
 import fr.eni.sprizza.bo.Product;
 import fr.eni.sprizza.dal.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -25,6 +26,17 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> findAllActive() {
         return null;
     }
+
+    @Override
+    public List<Product> findByType(String type) {
+        return this.productRepository.findByType(type);
+    }
+
+//    @Query("select from product where type = ?")
+//    @Override
+//    public List<Product> findByType(String type) {
+//        return this.productRepository.findByType("pizza");
+//    }
 
     public Map<String, List<Product>> sortProductByType(Map<String, List<Product>> products) {
         // Define custom order for printing

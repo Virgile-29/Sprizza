@@ -10,5 +10,7 @@ public interface ProductService {
 
     public List<Product> findAllActive();
 
+    public List<Product> findByType(String type);
+
     public Map<String, List<Product>> sortProductByType(Map<String, List<Product>> products);
 }

@@ -53,6 +53,7 @@ public class WebSecurityConfig {
                         .anyRequest().permitAll())
                             .formLogin((form) -> form
                                 .loginPage("/admin/login")
+
                                 .permitAll()
                                 .defaultSuccessUrl("/admin", true)
                         )

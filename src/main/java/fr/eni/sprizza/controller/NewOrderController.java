@@ -34,15 +34,34 @@ public class NewOrderController {
         return "newOrder";
     }
 
-    @GetMapping("new-order")
+    @GetMapping("/")
     public String newOrderCustomer(Model model) {
-        return newOrder(model);
+        String type = "Pizza";
+        List<Product> products = productService.findByType("pizza");
+        model.addAttribute("productsByType", products);
+        model.addAttribute("Pizza", type);
+        return "newOrderCustomer";
     }
 
     @PostMapping("/admin/new-order-post")
     @CrossOrigin
     public String newOrderPost(@RequestBody Order order) {
+        System.out.println("I WAS HERE");
         orderService.save(order);
         return "redirect:/admin";
     }
+    
+    @PostMapping("/new-order-post")
+    @CrossOrigin
+    public String newOrderPostCustomer(@RequestBody Order order) {
+        System.out.println("I WAS HERE");
+        order.setPaid(true);
+        orderService.save(order);
+        return "redirect:/admin";
+    }
+
+      @GetMapping("/success")
+    public String newOrderSuccess() {
+        return "success";
+      }
 }

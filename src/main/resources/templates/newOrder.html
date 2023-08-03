@@ -1,13 +1,16 @@
+<script src="../static/js/shopping-cart.js"></script>
 <div xmlns:th="http://www.thymeleaf.org" th:replace="~{/fragments/header :: header}"></div>
-<body>
+<body xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <th:block th:replace="~{/fragments/navbarTitle :: navbarTitle}"></th:block>
 <nav th:replace="~{/fragments/navbarTitle :: navbar}"></nav>
+<h1 sec:authorize="!isAuthenticated()"> Bienvenue prenez vos aises ! </h1>
     <div class="container">
         <div class="row" >
-            <th:block th:each="products : ${productsByType}">
+            <!-- Order Menu -->
+            <th:block th:each="products : ${productsByType}"  sec:authorize="isAuthenticated()">
                 <h2 th:text="${products.key}"></h2>
                 <th:block th:each="product: ${products.value}">
-                    <div class="col-6 text-center" >
+                    <div class="col-lg-6 col-s-12 text-center" >
                         <a class="menu-item" th:onclick="ShoppingCart.addProduct([[${product.id}]], [[${product.name}]]); displayShoppingCart()" th:text="${product.name}"></a>
                         <th:block th:if="${product.ingredients != null}">
                                 <p class="menu-ingredient">
@@ -20,35 +23,30 @@
                     </div>
                 </th:block>
             </th:block>
-        </div>
+    <!-- Online order Menu -->
+            <h2 sec:authorize="!isAuthenticated()" th:text="${Pizza}"></h2>
+            <th:block th:each="product: ${productsByType}"  sec:authorize="!isAuthenticated()">
+                    <div class="col-lg-6 col-s-12 text-center" >
+                        <a class="menu-item" th:onclick="ShoppingCart.addProduct([[${product.id}]], [[${product.name}]]);
+                        displayShoppingCart()" th:text="${product.name}">
 
-<div class="container" >
-    <div class="row">
-        <h1>Paniers</h1>
-        <div class="col-6" id="cart">
-            <table id="shoppingCartTable">
-
-            </table>
-        </div>
-        <div class="col-6" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
-            <form method="POST" action="/new-order">
-                <div class="form-group" sec:authorize="!isAuthenticated()">
-                    <label for="name">Nom du client</label>
-                    <input type="text" class="form-control" id="name">
-                </div>
-                <th:block sec:authorize="isAuthenticated()">
-                    <div class="form-group">
-                        <label for="tableNumber">Numéro de table</label>
-                        <input type="number" class="form-control" id="tableNumber">
+                        </a>
+                        <th:block th:if="${product.ingredients != null}">
+                            <p class="menu-ingredient">
+                                <th:block th:each="ingredient: ${product.ingredients}">
+                                    <span th:text="${ingredient.name} "></span>
+                                    ,&nbsp;
+                                </th:block>
+                            </p>
+                        </th:block>
                     </div>
-                </th:block>
-                <a onclick="validateShoppingCart()" class="btn btn-primary">Valider la commande</a>
-            </form>
-
+            </th:block>
         </div>
     </div>
+<div th:replace="~{/fragments/shopping-cart :: cart}"></div>
 
-</div>
 <footer th:replace="~{/fragments/footer :: footer}"></footer>
 <script  th:src="@{/js/shopping-cart.js}"></script>
+        <script th:src="@{/js/modalManager.js}"></script>
 </body>
+

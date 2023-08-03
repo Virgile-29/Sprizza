@@ -59,33 +59,38 @@ const ShoppingCart = {
 
 }
 
-function validateShoppingCart() {
+function validateShoppingCart(endPoint) {
     const order = {
         clientName: "",
         tableNumber: 0,
         lines: []
     }
-    const name = document.getElementById("name").value
-    const tableNumber = document.getElementById("tableNumber").value
-    order.clientName = name
-    order.tableNumber = tableNumber
+    const name = document?.getElementById("name")?.value ?? ""
+    let tableNumber = document?.getElementById("tableNumber")?.value
+
+    order.clientName = name ?? ""
+
+    // -1 means its an external order
+    order.tableNumber = tableNumber ?? -1
     order.lines = ShoppingCart.linesId()
     const JSONOrder = JSON.stringify(order)
     console.log(JSONOrder)
     localStorage.setItem("cart", JSON.stringify(JSONOrder))
-    submitCart(JSONOrder)
+    submitCart(JSONOrder, endPoint)
 }
 
-function submitCart(order) {
-    fetch("http://localhost:8080/admin/new-order-post", {
+function submitCart(order, endPoint) {
+    fetch("http://localhost:8080" + endPoint, {
         method: "POST",
         headers: {
             "Content-Type": 'application/json',
         },
         body: order
     })
-        .then((res) => window.location.href ="http://localhost:8080/admin")
-        .catch(() => console.log("post fail"))
+        .then((res) =>  {
+            window.location.href="http://localhost:8080/success"
+        })
+        .catch(() => console.log("fail to post at :  " + endPoint))
 }
 function displayShoppingCart() {
     resetShoppingTable()
