@@ -38,7 +38,7 @@ public class DailyOrderController {
 		switch (role) {
 			case "manager" : orders = orderService.findAll();
 				break;
-			case "cook" : orders = orderService.findByStatus("ready");
+			case "cook" : orders = orderService.findByStatusNot("served");
 				break;
 			case "waiter" : orders = orderService.findByStatusNotAndPaid("waiting",false);
 				break;
@@ -47,6 +47,7 @@ public class DailyOrderController {
 
 		orders.sort(new DailyOrderComparator());
 
+		
 		model.addAttribute("orders", orders);
 
 		return "dailyOrder";

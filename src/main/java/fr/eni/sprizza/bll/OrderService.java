@@ -11,9 +11,8 @@ public interface OrderService {
 
 	public Order findById(Long id) throws BLLException;
 
-	public List<Order> findByStatus(String string);
+	public List<Order> findByStatusNot(String string);
 	
-	public List<Order> findByStatusAndProductType(String status, String type);
-
 	public List<Order> findByStatusNotAndPaid(String string, boolean b);
+	
 }
