@@ -10,4 +10,8 @@ public interface OrderService {
 	public void save(Order order);
 
 	public Order findById(Long id) throws BLLException;
+
+	public List<Order> findByStatusAndProductType(String status, String type);
+
+	public List<Order> findByStatusNotAndPaid(String string, boolean b);
 }

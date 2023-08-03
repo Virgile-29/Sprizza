@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "_order")
-public class Order {
+public class Order implements Comparable<Order> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -105,5 +105,11 @@ public class Order {
 	public String toString() {
 		return "Order [id=" + id + ", clientName=" + clientName + ", timeSlot=" + timeSlot + ", status=" + status
 				+ ", paid=" + paid + ", tableNumber=" + tableNumber + ", lines=" + lines + "]";
+	}
+	
+	@Override
+	public int compareTo(Order o) {
+		// TODO Auto-generated method stub
+		return this.timeSlot.compareTo(o.timeSlot);
 	}
 }

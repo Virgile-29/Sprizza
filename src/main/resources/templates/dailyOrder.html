@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <div xmlns:th="http://www.thymeleaf.org" th:replace="~{/fragments/header :: header}"></div>
-<body>
-<th:block th:replace="~{/fragments/navbarTitle :: navbarTitle}"></th:block>
-<nav th:replace="~{/fragments/navbarTitle :: navbar}"></nav>
 
-</head>
+<body>
+	<th:block th:replace="~{/fragments/navbarTitle :: navbarTitle}"></th:block>
+	<nav th:replace="~{/fragments/navbarTitle :: navbar}"></nav>
+
+	</head>
+
 	<body>
 		<h2>Commandes du jour : </h2>
 		<form th:action="@{/admin/dailyOrder}" method="post">
+			<input type="submit" value="Submit">
 			<table class="table">
 				<thead>
 					<tr>
@@ -16,15 +19,25 @@
 						<th scope="col">Nom Client</th>
 						<th scope="col">Heure de la commande</th>
 						<th>
-							<span sec:authorize="hasAuthority('manager')">
-								<span scope="col">Table/À emporter</span>
-							</span>	
+							<span sec:authorize="hasAuthority('manager') or hasAuthority('waiter')">
+								Table/À emporter
+							</span>
 						</th>
-						<th scope="col">Statut</th>
-						<th>
+						<th scope="col">
+							<span sec:authorize="hasAuthority('cook')">
+								En attente/Préparé
+							</span>
+							<span sec:authorize="hasAuthority('waiter')">
+								Préparé/Servi
+							</span>
 							<span sec:authorize="hasAuthority('manager')">
-								<span scope="col">Payé</span>
-							</span>	
+								Statut
+							</span>
+						</th>
+						<th>
+							<span sec:authorize="hasAuthority('manager') or hasAuthority('waiter')">
+								Payé
+							</span>
 						</th>
 					</tr>
 				</thead>
@@ -35,56 +48,98 @@
 							<td th:text="${order.clientName}"></td>
 							<td th:text="${order.timeSlot}"></td>
 							<td>
-								<span sec:authorize="hasAuthority('manager')">
-									<span th:if="${order.tableNumber != -1}" th:text="'table ' + ${order.tableNumber}"></span>
+								<span sec:authorize="hasAuthority('manager') or hasAuthority('waiter')">
+									<span th:if="${order.tableNumber != -1}"
+										th:text="'table ' + ${order.tableNumber}"></span>
 									<span th:if="${order.tableNumber == -1}">Commande en ligne</span>
-								</span>	
+								</span>
 							</td>
-							<td th:if="${order.status == 'ready'}">Commande prête</td>
 							<td th:if="${order.status == 'waiting'}">Commande en attente</td>
+							<td th:if="${order.status == 'ready'}">Commande prête</td>
+							<td th:if="${order.status == 'served'}">Commande servie</td>
 							<td>
-								<span sec:authorize="hasAuthority('manager')">
+								<span sec:authorize="hasAuthority('manager') or hasAuthority('waiter')">
 									<span th:if="${order.paid == true}">Payé</span>
-									<span th:if="${order.paid == false}">Non Payé</td>
-								</span>	
+									<span th:if="${order.paid == false}">Non Payé
+							</td>
+							</span>
 							</td>
 						</tr>
 						</tr>
-							<td></td>
-							<td colspan="3">
-								<th:block th:each="line : ${order.lines}">
-									<div th:text="${line.quantity} + ' * ' + ${line.product.name}"> </div>
-								</th:block>
-							</td>
-							<td>
-								<input th:attr="
-										type=checkbox, class=btn-check, autocomplete=off,
-										value=${order.status == 'ready' ? 'waiting' : 'ready'},
-										name='order#'+ ${order.id} + '.status',
-										id='order#'+ ${order.id} + '.status'">
-								<label class="btn" th:attrappend="for='order#'+ ${order.id}  + '.status'">
-									<i class="bi"
-										th:classappend="${order.status == 'ready'} ? bi-square-fill : bi-square">
-									</i>
-								</label>
-							</td>
-							<td sec:authorize="hasAuthority('manager')">
-								<input th:attr="
+						<td></td>
+						<td colspan="3">
+							<th:block th:each="line : ${order.lines}">
+								<div
+									th:if="${line.product.type != 'pizza'}"
+									sec:authorize="hasAuthority('manager') or hasAuthority('waiter')"
+									th:text="${line.quantity} + ' * ' + ${line.product.name}">
+								</div>
+								<div
+									th:if="${line.product.type == 'pizza'}"
+									th:text="${line.quantity} + ' * ' + ${line.product.name}">
+								</div>
+							</th:block>
+						</td>
+
+						<!--input version cook-->
+						<td sec:authorize="hasAuthority('cook')">
+							<input th:attr="
+											type=checkbox, class=btn-check, autocomplete=off,
+											value=${order.status == 'ready' ? 'waiting' : 'waiting'},
+											name='order#'+ ${order.id} + '.status',
+											id='order#'+ ${order.id} + '.status'">
+							<label class="btn" th:attrappend="for='order#'+ ${order.id}  + '.status'">
+								<i class="bi" th:classappend="${order.status == 'ready'} ? bi-square-fill : bi-square ">
+								</i>
+							</label>
+						</td>
+
+						<!--input version waiter-->
+						<td sec:authorize="hasAuthority('waiter')">
+							<input th:attr="
+											type=checkbox, class=btn-check, autocomplete=off,
+											value=${order.status == 'ready' ? 'served' : 'ready'},
+											name='order#'+ ${order.id} + '.status',
+											id='order#'+ ${order.id} + '.status'">
+							<label class="btn" th:attrappend="for='order#'+ ${order.id}  + '.status'">
+								<i class="bi" th:classappend="${order.status == 'ready'} ? bi-square : bi-square-fill">
+								</i>
+							</label>
+						</td>
+
+						<!--input version manager-->
+						<td sec:authorize="hasAuthority('manager')">
+							<select class="form-select" aria-label="Default select example" 
+								th:attr="name='order#'+ ${order.id} + '.status'">
+								<option th:attr="selected=${order.status == 'waiting'} ? true : false " value="waiting">
+									waiting</option>
+								<option th:attr="selected=${order.status == 'ready'} ? true : false " value="ready">
+									ready</option>
+								<option th:attr="selected=${order.status == 'served'} ? true : false " value="served">
+									served</option>
+							</select>
+							<input th:attr="
+											type=checkbox, class=btn-check, autocomplete=off,
+											value=${order.status == 'waiting' ? 'served' : 'served'},
+											name='order#'+ ${order.id} + '.status',
+											id='order#'+ ${order.id} + '.status'">
+						</td>
+						<td sec:authorize="hasAuthority('manager') or hasAuthority('waiter')">
+							<input th:attr="
 										type=checkbox, class=btn-check, autocomplete=off,
 										value=!${order.paid},
 										name='order#'+ ${order.id} + '.paid',
 										id='order#'+ ${order.id} + '.paid'">
-								<label class="btn" th:attrappend="for='order#'+ ${order.id} + '.paid'">
-									<i class="bi"
-										th:classappend="${order.paid} ? bi-square-fill : bi-square">
-									</i>
-								</label>
-							</td>
+							<label class="btn" th:attrappend="for='order#'+ ${order.id} + '.paid'">
+								<i class="bi" th:classappend="${order.paid} ? bi-square-fill : bi-square">
+								</i>
+							</label>
+						</td>
 						</tr>
 					</th:block>
 				</tbody>
 			</table>
-			<input type="submit" value="Submit">
 		</form>
 	</body>
+
 </html>

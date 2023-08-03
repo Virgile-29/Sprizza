@@ -24,7 +24,6 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public void save(Order order) {
 		this.orderRepository.save(order);
-		
 	}
 
 	@Override
@@ -35,5 +34,17 @@ public class OrderServiceImpl implements OrderService{
 		} catch (Exception e) {
 			throw new BLLException("Le produit n'existe pas/plus.");
 		}
+	}
+
+	@Override
+	public List<Order> findByStatusAndProductType(String status, String type) {
+		
+		return orderRepository.findByStatusAndProductType(status, type);
+	}
+
+	@Override
+	public List<Order> findByStatusNotAndPaid(String string, boolean b) {
+		
+		return orderRepository.findByStatusNotAndPaid(string, b);
 	}
 }

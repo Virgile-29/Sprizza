@@ -8,6 +8,8 @@ public class StatusUtil {
 			return 0;
 		case "waiting":
 			return 1;
+		case "served":
+			return 2;
 		default:
 			throw new BLLException("Unknow order status");
 		}
