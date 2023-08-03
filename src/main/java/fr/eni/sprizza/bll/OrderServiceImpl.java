@@ -37,19 +37,14 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public List<Order> findByStatus(String status) {
-		return findByStatus(status);
+	public List<Order> findByStatusNot(String string) {
+		return orderRepository.findByStatusNot(string);
 	}
 	
-	@Override
-	public List<Order> findByStatusAndProductType(String status, String type) {
-		
-		return null;
-	}
-
 	@Override
 	public List<Order> findByStatusNotAndPaid(String string, boolean b) {
 		
 		return orderRepository.findByStatusNotAndPaid(string, b);
 	}
+
 }
