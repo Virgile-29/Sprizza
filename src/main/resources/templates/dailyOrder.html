@@ -24,7 +24,7 @@
 							</span>
 						</th>
 						<th scope="col">
-							<span sec:authorize="hasAuthority('cook')">
+							<span sec:authorize="hasAuthority('cook') or hasAuthority('cook')">
 								En attente/Préparé
 							</span>
 							<span sec:authorize="hasAuthority('waiter')">
@@ -71,18 +71,19 @@
 							<th:block th:each="line : ${order.lines}">
 								<div
 									th:if="${line.product.type != 'pizza'}"
-									sec:authorize="hasAuthority('manager') or hasAuthority('waiter')"
+									sec:authorize="hasAuthority('manager') or hasAuthority('waiter') or hasAuthority('cook')"
 									th:text="${line.quantity} + ' * ' + ${line.product.name}">
 								</div>
 								<div
 									th:if="${line.product.type == 'pizza'}"
+									sec:authorize="hasAuthority('manager') or hasAuthority('waiter') or hasAuthority('pizzaiolo')"
 									th:text="${line.quantity} + ' * ' + ${line.product.name}">
 								</div>
 							</th:block>
 						</td>
 
 						<!--input version cook-->
-						<td sec:authorize="hasAuthority('cook')">
+						<td sec:authorize="hasAuthority('cook') or hasAuthority('pizzaiolo')">
 							<input th:attr="
 											type=checkbox, class=btn-check, autocomplete=off,
 											value=${order.status == 'ready' ? 'waiting' : 'waiting'},

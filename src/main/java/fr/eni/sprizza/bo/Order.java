@@ -32,6 +32,17 @@ public class Order implements Comparable<Order> {
 		this.paid = false;
 		this.timeSlot = LocalDateTime.now();
 	}
+	
+	public Boolean containPizza() {
+		
+		for (OrderLine line : this.getLines()) {
+			if ("pizza".equals(line.getProduct().getType())) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<OrderLine> lines;

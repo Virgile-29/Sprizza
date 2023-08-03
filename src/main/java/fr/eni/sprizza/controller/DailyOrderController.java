@@ -17,6 +17,7 @@ import fr.eni.sprizza.bll.BLLException;
 import fr.eni.sprizza.bll.DailyOrderComparator;
 import fr.eni.sprizza.bll.OrderService;
 import fr.eni.sprizza.bo.Order;
+import fr.eni.sprizza.bo.OrderLine;
 
 @Controller
 public class DailyOrderController {
@@ -36,18 +37,26 @@ public class DailyOrderController {
 		String role = authentication.getAuthorities().iterator().next().getAuthority();
 
 		switch (role) {
-			case "manager" : orders = orderService.findAll();
-				break;
-			case "cook" : orders = orderService.findByStatusNot("served");
-				break;
-			case "waiter" : orders = orderService.findByStatusNotAndPaid("waiting",false);
-				break;
-			default : orders = null;
+		case "manager":
+			orders = orderService.findAll();
+			break;
+		case "pizzaiolo":
+			orders = orderService.findByStatus("waiting");
+			orders.removeIf(order -> !order.containPizza());
+			break;
+		case "cook":
+			orders = orderService.findByStatusAndPaid("waiting", false);
+			orders.removeIf(order -> order.containPizza());
+			break;
+		case "waiter":
+			orders = orderService.findByStatusAndPaid("ready", false);
+			break;
+		default:
+			orders = null;
 		}
 
 		orders.sort(new DailyOrderComparator());
 
-		
 		model.addAttribute("orders", orders);
 
 		return "dailyOrder";
