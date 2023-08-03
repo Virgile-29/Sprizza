@@ -31,6 +31,7 @@ public class Order implements Comparable<Order> {
 		this.status = "waiting";
 		this.paid = false;
 		this.timeSlot = LocalDateTime.now();
+		this.tableNumber = -1;
 	}
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

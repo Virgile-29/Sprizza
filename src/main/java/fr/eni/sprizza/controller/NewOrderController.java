@@ -6,10 +6,7 @@ import org.springframework.ui.Model;
 import fr.eni.sprizza.bll.ProductService;
 import fr.eni.sprizza.bo.Product;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 
 import javax.xml.crypto.Data;
@@ -32,31 +29,39 @@ public class NewOrderController {
         List<Product> products = productService.findAll();
         Map<String, List<Product>> productsByType =
                 products.stream().collect(Collectors.groupingBy(Product::getType));
-        Map<String, List<Product>> sortedProductsByType = sortProductByType(productsByType);
+        Map<String, List<Product>> sortedProductsByType = productService.sortProductByType(productsByType);
         model.addAttribute("productsByType", sortedProductsByType);
         return "newOrder";
+    }
+
+    @GetMapping("/")
+    public String newOrderCustomer(Model model) {
+        String type = "Pizza";
+        List<Product> products = productService.findByType("pizza");
+        model.addAttribute("productsByType", products);
+        model.addAttribute("Pizza", type);
+        return "newOrderCustomer";
     }
 
     @PostMapping("/admin/new-order-post")
     @CrossOrigin
     public String newOrderPost(@RequestBody Order order) {
+        System.out.println("I WAS HERE");
+        orderService.save(order);
+        return "redirect:/admin";
+    }
+    
+    @PostMapping("/new-order-post")
+    @CrossOrigin
+    public String newOrderPostCustomer(@RequestBody Order order) {
+        System.out.println("I WAS HERE");
+        order.setPaid(true);
         orderService.save(order);
         return "redirect:/admin";
     }
 
-    private Map<String, List<Product>> sortProductByType(Map<String, List<Product>> products) {
-        // Define custom order for printing
-        List<String> customOrder = List.of("entree", "principal", "pizza", "desserts", "boisson");
-
-        // Sort the keys based on the custom order
-        List<String> sortedKeys = new ArrayList<>(products.keySet());
-        sortedKeys.sort(Comparator.comparingInt(customOrder::indexOf));
-
-        // Sort the map
-        Map<String, List<Product>> sortedMap = new LinkedHashMap<>();
-        for (String key : sortedKeys) {
-            sortedMap.put(key, products.get(key));
-        }
-        return sortedMap;
-    }
+      @GetMapping("/success")
+    public String newOrderSuccess() {
+        return "success";
+      }
 }
