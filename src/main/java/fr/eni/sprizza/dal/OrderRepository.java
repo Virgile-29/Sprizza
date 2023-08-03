@@ -13,4 +13,8 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 	
 	public Optional<Order> findById(Long id);
 
+	public List<Order> findByStatusNot(String string);
+
+	public List<Order> findByStatusNotAndPaid(String string, boolean b);
+
 }
