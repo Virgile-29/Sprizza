@@ -38,7 +38,7 @@ public class DailyOrderController {
 		switch (role) {
 			case "manager" : orders = orderService.findAll();
 				break;
-			case "cook" : orders = orderService.findByStatusAndProductType("waiting","pizza");
+			case "cook" : orders = orderService.findByStatus("ready");
 				break;
 			case "waiter" : orders = orderService.findByStatusNotAndPaid("waiting",false);
 				break;

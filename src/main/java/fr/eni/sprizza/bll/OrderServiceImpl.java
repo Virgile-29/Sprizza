@@ -37,9 +37,14 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
+	public List<Order> findByStatus(String status) {
+		return findByStatus(status);
+	}
+	
+	@Override
 	public List<Order> findByStatusAndProductType(String status, String type) {
 		
-		return orderRepository.findByStatusAndProductType(status, type);
+		return null;
 	}
 
 	@Override
