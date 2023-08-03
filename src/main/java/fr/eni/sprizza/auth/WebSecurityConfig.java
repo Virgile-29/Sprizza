@@ -49,8 +49,8 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http)throws Exception {
         http.authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/admin").authenticated()
-                        .requestMatchers("/new-order").permitAll())
+                        .requestMatchers("/admin/**").authenticated()
+                        .anyRequest().permitAll())
                             .formLogin((form) -> form
                                 .loginPage("/admin/login")
                                 .permitAll()
@@ -58,6 +58,7 @@ public class WebSecurityConfig {
                         )
                 // TODO: CSRF protection
                 // CSRF Disabled for development purposes
+
                 .csrf().disable();
         return http.build();
     }
