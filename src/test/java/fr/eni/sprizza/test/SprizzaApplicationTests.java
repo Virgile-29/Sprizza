@@ -1,14 +1,13 @@
 package fr.eni.sprizza.test;
 
-import fr.eni.sprizza.bo.User;
-import fr.eni.sprizza.dal.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import fr.eni.sprizza.bo.Order123;
-import fr.eni.sprizza.dal.OrderRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import fr.eni.sprizza.bo.User;
+import fr.eni.sprizza.dal.OrderRepository;
+import fr.eni.sprizza.dal.UserRepository;
 
 @SpringBootTest
 class SprizzaApplicationTests {
@@ -37,24 +36,36 @@ class SprizzaApplicationTests {
 		if(userRepository.getUserByUserName("Michou") == null) {
 			createUsers();
 		}
-
 	}
 
 	private void createUsers() {
 		BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
 		User manager = new User();
 		manager.setUsername("Michou");
-		manager.setPassword(pwEncoder.encode("123456"));
+		manager.setPassword(pwEncoder.encode("azerty"));
 		manager.setRole("manager");
 
 		User pizzaiolo = new User();
 		pizzaiolo.setUsername("Mario");
 		pizzaiolo.setPassword(pwEncoder.encode("azerty"));
-		pizzaiolo.setRole("cuisinier");
+		pizzaiolo.setRole("pizzaiolo");
+		
+		User waiter = new User();
+		waiter.setUsername("Waltuh");
+		waiter.setPassword(pwEncoder.encode("azerty"));
+		waiter.setRole("waiter");
 
+		User cook = new User();
+		cook.setUsername("Etchebest");
+		cook.setPassword(pwEncoder.encode("azerty"));
+		cook.setRole("cook");
 
 		userRepository.save(manager);
 		userRepository.save(pizzaiolo);
+		userRepository.save(waiter);
+		userRepository.save(cook);
+		
+		
 	}
 
 }

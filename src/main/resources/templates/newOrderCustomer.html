@@ -1,0 +1,36 @@
+<div xmlns:th="http://www.thymeleaf.org" th:replace="~{/fragments/header :: header}"></div>
+<body xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<th:block th:replace="~{/fragments/navbarTitle :: navbarTitle}"></th:block>
+<nav th:replace="~{/fragments/navbarTitle :: navbar}"></nav>
+
+<div class="container text-centered">
+  <h1 > Bienvenue prenez vos aises ! </h1>
+  <div class="row" >
+
+    <!-- Online order Menu -->
+    <h2 th:text="${Pizza}"></h2>
+    <th:block th:each="product: ${productsByType}">
+      <div class="col-6 text-center" >
+        <a class="menu-item" th:onclick="ShoppingCart.addProduct([[${product.id}]], [[${product.name}]]);
+                        displayShoppingCart()" th:text="${product.name}">
+        </a>
+        <th:block th:if="${product.ingredients != null}">
+          <p class="menu-ingredient">
+            <th:block th:each="ingredient: ${product.ingredients}">
+              <span th:text="${ingredient.name} "></span>
+              ,&nbsp;
+            </th:block>
+          </p>
+        </th:block>
+      </div>
+    </th:block>
+  </div>
+</div>
+
+<div th:replace="~{/fragments/shopping-cart :: cart}"></div>
+
+<footer th:replace="~{/fragments/footer :: footer}"></footer>
+
+<script  th:src="@{/js/shopping-cart.js}"></script>
+<script th:src="@{/js/modalManager.js}"></script>
+</body>

@@ -1,11 +1,39 @@
 <div xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <div th:fragment="navbarTitle" >
-  <h1 class="h1 text-center" style="color: white">50 Nuances de pizzas</h1>
+  <h1 class="h1 text-center">50 Nuances de pizzas</h1>
 </div>
 
 <div th:fragment="navbar" >
-  <nav class="navbar">
-    <span sec:authentication="name"></span>
-  </nav>
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky">
+        <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/admin}">Accueil</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" th:if="${#authorization.expression('isAuthenticated()')}">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" th:if="${#authorization.expression('isAuthenticated()')}">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/admin/new-order}">Nouvelle commande</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/admin/dailyOrder}">Commandes</a>
+            </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link">
+                  <span sec:authentication="name">Bob</span>
+                  <span sec:authentication="principal.authorities">[ROLE]</span>
+                </a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Déconnexion</a>
+            </li>
+            </ul>
+        </div></div>
+      </nav>
 </div>
 </div>
