@@ -48,17 +48,22 @@ class SprizzaApplicationTests {
 		User pizzaiolo = new User();
 		pizzaiolo.setUsername("Mario");
 		pizzaiolo.setPassword(pwEncoder.encode("azerty"));
-		pizzaiolo.setRole("cook");
+		pizzaiolo.setRole("pizzaiolo");
 		
 		User waiter = new User();
 		waiter.setUsername("Waltuh");
 		waiter.setPassword(pwEncoder.encode("azerty"));
 		waiter.setRole("waiter");
 
+		User cook = new User();
+		cook.setUsername("Etchebest");
+		cook.setPassword(pwEncoder.encode("azerty"));
+		cook.setRole("cook");
 
 		userRepository.save(manager);
 		userRepository.save(pizzaiolo);
 		userRepository.save(waiter);
+		userRepository.save(cook);
 		
 		
 	}

@@ -1,5 +1,6 @@
 package fr.eni.sprizza.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import fr.eni.sprizza.bll.BLLException;
 import fr.eni.sprizza.bll.DailyOrderComparator;
 import fr.eni.sprizza.bll.OrderService;
 import fr.eni.sprizza.bo.Order;
+import fr.eni.sprizza.bo.OrderLine;
 
 @Controller
 public class DailyOrderController {
@@ -34,13 +36,26 @@ public class DailyOrderController {
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String role = authentication.getAuthorities().iterator().next().getAuthority();
+		
+		LocalDate today = LocalDate.now();
 
-		orders = switch (role) {
-			case "manager" -> orderService.findAll();
-			case "cook" -> orderService.findByStatusNot("served");
-			case "waiter" -> orderService.findByStatusNotAndPaid("waiting", false);
-			default -> throw new BLLException("Votre compte n'a pas de rôle et ne peut donc pas accéder à cette page.");
-		};
+		switch (role) {
+<<<<<<< cookPageImprovement
+			case "manager" -> orders = orderService.findAll();
+			case "pizzaiolo" -> {
+				orders = orderService.findByStatus("waiting");
+				orders.removeIf(order -> !order.containPizza() || !order.isSameDay(today));
+			}
+			case "cook" -> {
+				orders = orderService.findByStatusAndPaid("waiting", false);
+				orders.removeIf(order -> order.containPizza() || !order.isSameDay(today));
+			}
+			case "waiter" -> { 
+        orders = orderService.findByStatusAndPaid("ready", false);
+        orders.removeIf(order -> !order.isSameDay(today)); 
+      }
+			default -> throw new BLLException("Aucun role associé a votre compte");
+		}
 
 		orders.sort(new DailyOrderComparator());
 
