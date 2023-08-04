@@ -31,31 +31,26 @@ public class DailyOrderController {
 	}
 
 	@GetMapping("/admin/dailyOrder")
-	public String findAllOrder(Model model) {
+	public String findAllOrder(Model model) throws BLLException {
 		List<Order> orders;
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String role = authentication.getAuthorities().iterator().next().getAuthority();
 		
 		LocalDate today = LocalDate.now();
-		
+
 		switch (role) {
-		case "manager":
-			orders = orderService.findAll();
-			break;
-		case "pizzaiolo":
-			orders = orderService.findByStatus("waiting");
-			orders.removeIf(order -> !order.containPizza() || !order.isSameDay(today));
-			break;
-		case "cook":
-			orders = orderService.findByStatusAndPaid("waiting", false);
-			orders.removeIf(order -> order.containPizza() || !order.isSameDay(today));
-			break;
-		case "waiter":
-			orders = orderService.findByStatusAndPaid("ready", false);
-			break;
-		default:
-			orders = null;
+			case "manager" -> orders = orderService.findAll();
+			case "pizzaiolo" -> {
+				orders = orderService.findByStatus("waiting");
+				orders.removeIf(order -> !order.containPizza() || !order.isSameDay(today));
+			}
+			case "cook" -> {
+				orders = orderService.findByStatusAndPaid("waiting", false);
+				orders.removeIf(order -> order.containPizza() || !order.isSameDay(today));
+			}
+			case "waiter" -> orders = orderService.findByStatusAndPaid("ready", false);
+			default -> throw new BLLException("Aucun role associé a votre compte");
 		}
 
 		orders.sort(new DailyOrderComparator());
@@ -77,12 +72,8 @@ public class DailyOrderController {
 					Order order = orderService.findById(Long.valueOf(fields[1]));
 
 					switch (fields[2]) {
-					case "status":
-						order.setStatus(formData.getFirst(key));
-						break;
-					case "paid":
-						order.setPaid(Boolean.valueOf(formData.getFirst(key)));
-						break;
+						case "status" -> order.setStatus(formData.getFirst(key));
+						case "paid" -> order.setPaid(Boolean.valueOf(formData.getFirst(key)));
 					}
 					orderService.save(order);
 				} catch (Exception e) {
