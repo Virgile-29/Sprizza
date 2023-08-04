@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import fr.eni.sprizza.bo.Order;
 import fr.eni.sprizza.dal.OrderRepository;
-import fr.eni.sprizza.dal.OrderRepositoryImpl;
 
 @Service
 public class OrderServiceImpl implements OrderService {

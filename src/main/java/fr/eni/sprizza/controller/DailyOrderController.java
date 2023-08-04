@@ -1,5 +1,6 @@
 package fr.eni.sprizza.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,18 +36,20 @@ public class DailyOrderController {
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String role = authentication.getAuthorities().iterator().next().getAuthority();
-
+		
+		LocalDate today = LocalDate.now();
+		
 		switch (role) {
 		case "manager":
 			orders = orderService.findAll();
 			break;
 		case "pizzaiolo":
 			orders = orderService.findByStatus("waiting");
-			orders.removeIf(order -> !order.containPizza());
+			orders.removeIf(order -> !order.containPizza() || !order.isSameDay(today));
 			break;
 		case "cook":
 			orders = orderService.findByStatusAndPaid("waiting", false);
-			orders.removeIf(order -> order.containPizza());
+			orders.removeIf(order -> order.containPizza() || !order.isSameDay(today));
 			break;
 		case "waiter":
 			orders = orderService.findByStatusAndPaid("ready", false);

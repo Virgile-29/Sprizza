@@ -1,5 +1,6 @@
 package fr.eni.sprizza.bo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -42,6 +43,11 @@ public class Order implements Comparable<Order> {
 		}
 		
 		return false;
+	}
+	
+	public Boolean isSameDay(LocalDate date) {
+		
+		return this.timeSlot.toLocalDate().isEqual(date);
 	}
 
 	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
