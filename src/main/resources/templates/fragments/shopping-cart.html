@@ -1,0 +1,58 @@
+<div class="container cart" th:fragment="cart" xmlns:th="http://www.w3.org/1999/html">
+    <div class="row">
+        <h1>Paniers</h1>
+        <div class="col-6" id="cart">
+            <table id="shoppingCartTable">
+
+            </table>
+        </div>
+        <div class="col-lg-6 col-s-12" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+            <form method="POST" action="/new-order">
+                <div class="form-group" sec:authorize="!isAuthenticated()">
+                    <label for="name">Votre nom : </label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <th:block sec:authorize="isAuthenticated()">
+                    <div class="form-group">
+                        <label for="tableNumber">Numéro de table</label>
+                        <input type="number" class="form-control" id="tableNumber">
+                    </div>
+                </th:block>
+
+                <a onclick="validateShoppingCart('/admin/new-order-post')" class="btn btn-primary" sec:authorize="isAuthenticated()">Valider la commande !</a>
+                <a id="modalButton" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary" sec:authorize="!isAuthenticated()">Valier et payer !</a>
+
+                <!-- Modal -->
+                <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Payer votre commande</h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="creditCard">Fais péter la carte</label>
+                                    <input type="text" class="form-control" id="creditCard" aria-describedby="emailHelp" placeholder="XXXX-XXXX-XXXX-XXXX">
+                                    <small id="emailHelp" class="form-text text-muted">&#128520; Nous n'enregistrons pas votre numéro de carte ! &#128520;</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="csv">CSV</label>
+                                    <input type="text" class="form-control" id="csv" placeholder="***">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="closeModal" type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                <button type="button" class="btn btn-primary" onclick="validateShoppingCart('/new-order-post')">Payer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fin Modal -->
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
