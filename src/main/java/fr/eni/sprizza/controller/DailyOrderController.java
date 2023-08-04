@@ -29,25 +29,21 @@ public class DailyOrderController {
 	}
 
 	@GetMapping("/admin/dailyOrder")
-	public String findAllOrder(Model model) {
+	public String findAllOrder(Model model) throws BLLException {
 		List<Order> orders;
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String role = authentication.getAuthorities().iterator().next().getAuthority();
 
-		switch (role) {
-			case "manager" : orders = orderService.findAll();
-				break;
-			case "cook" : orders = orderService.findByStatusNot("served");
-				break;
-			case "waiter" : orders = orderService.findByStatusNotAndPaid("waiting",false);
-				break;
-			default : orders = null;
-		}
+		orders = switch (role) {
+			case "manager" -> orderService.findAll();
+			case "cook" -> orderService.findByStatusNot("served");
+			case "waiter" -> orderService.findByStatusNotAndPaid("waiting", false);
+			default -> throw new BLLException("Votre compte n'a pas de rôle et ne peut donc pas accéder à cette page.");
+		};
 
 		orders.sort(new DailyOrderComparator());
 
-		
 		model.addAttribute("orders", orders);
 
 		return "dailyOrder";
@@ -65,12 +61,8 @@ public class DailyOrderController {
 					Order order = orderService.findById(Long.valueOf(fields[1]));
 
 					switch (fields[2]) {
-					case "status":
-						order.setStatus(formData.getFirst(key));
-						break;
-					case "paid":
-						order.setPaid(Boolean.valueOf(formData.getFirst(key)));
-						break;
+						case "status" -> order.setStatus(formData.getFirst(key));
+						case "paid" -> order.setPaid(Boolean.valueOf(formData.getFirst(key)));
 					}
 					orderService.save(order);
 				} catch (Exception e) {

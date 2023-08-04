@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6" xmlns:th="http://www.w3.org/1999/html">
 <div xmlns:th="http://www.thymeleaf.org" th:replace="~{/fragments/header :: header}"></div>
 
 <body>
@@ -140,6 +140,13 @@
 				</tbody>
 			</table>
 		</form>
+	<th:block>
+		<script>
+			setTimeout(() => {
+				window.location.reload()
+			}, 5000)
+		</script>
+	</th:block>
 	</body>
 
 </html>
