@@ -40,6 +40,7 @@ public class DailyOrderController {
 		LocalDate today = LocalDate.now();
 
 		switch (role) {
+<<<<<<< cookPageImprovement
 			case "manager" -> orders = orderService.findAll();
 			case "pizzaiolo" -> {
 				orders = orderService.findByStatus("waiting");
@@ -49,7 +50,10 @@ public class DailyOrderController {
 				orders = orderService.findByStatusAndPaid("waiting", false);
 				orders.removeIf(order -> order.containPizza() || !order.isSameDay(today));
 			}
-			case "waiter" -> orders = orderService.findByStatusAndPaid("ready", false);
+			case "waiter" -> { 
+        orders = orderService.findByStatusAndPaid("ready", false);
+        orders.removeIf(order -> !order.isSameDay(today)); 
+      }
 			default -> throw new BLLException("Aucun role associé a votre compte");
 		}
 
