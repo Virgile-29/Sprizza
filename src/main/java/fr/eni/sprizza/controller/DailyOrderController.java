@@ -53,6 +53,7 @@ public class DailyOrderController {
 			break;
 		case "waiter":
 			orders = orderService.findByStatusAndPaid("ready", false);
+			orders.removeIf(order -> !order.isSameDay(today));
 			break;
 		default:
 			orders = null;
